@@ -439,6 +439,88 @@
       "whatsappMessage": "Hola, vi el caso de estudio en Fuentivo y quiero conversar sobre una solución para mi negocio."
     }
   },
+  "AboutPage": {
+    "metadata": {
+      "title": "Sobre Fuentivo | Estudio de soluciones digitales",
+      "description": "Conoce el propósito, los principios y la forma de trabajo de Fuentivo, un estudio que diseña páginas web, sistemas y automatizaciones para negocios."
+    },
+    "intro": {
+      "eyebrow": "Sobre Fuentivo",
+      "title": "Tecnología clara para negocios que quieren avanzar.",
+      "description": "Fuentivo nace de una idea simple: la tecnología debe hacer que los negocios avancen, no que sus procesos se vuelvan más complicados."
+    },
+    "identity": {
+      "eyebrow": "Qué es Fuentivo",
+      "title": "Un estudio digital enfocado en problemas reales.",
+      "description": "Fuentivo diseña y construye páginas web, sistemas y automatizaciones alrededor de la operación de cada negocio. Existe para convertir necesidades comerciales y procesos difíciles de controlar en soluciones claras, útiles y preparadas para crecer."
+    },
+    "approach": {
+      "eyebrow": "Cómo trabajamos",
+      "title": "Primero el problema. Después, la herramienta.",
+      "description": "Cada proyecto comienza entendiendo a las personas, el proceso actual y el resultado que importa. Con ese contexto se define el alcance más útil, se construye con una base mantenible y se valida la experiencia en condiciones reales de uso.",
+      "steps": {
+        "understand": {
+          "title": "Entender el contexto",
+          "description": "Identificar qué frena al negocio, quién usa el proceso y dónde aparece la fricción."
+        },
+        "define": {
+          "title": "Definir lo esencial",
+          "description": "Priorizar una solución enfocada, con decisiones claras y un alcance que pueda sostenerse."
+        },
+        "build": {
+          "title": "Construir y comprobar",
+          "description": "Desarrollar una experiencia útil en móvil y escritorio, revisarla y mejorarla con criterio."
+        }
+      }
+    },
+    "principles": {
+      "eyebrow": "Principios",
+      "title": "Criterios que guían cada decisión.",
+      "items": {
+        "clarity": {
+          "title": "Claridad antes que complejidad",
+          "description": "La solución debe ser fácil de entender y usar."
+        },
+        "fit": {
+          "title": "Tecnología adaptada al negocio",
+          "description": "La herramienta responde al proceso, no al revés."
+        },
+        "mobile": {
+          "title": "Experiencia móvil real",
+          "description": "Las decisiones consideran cómo trabajan y navegan las personas."
+        },
+        "structured": {
+          "title": "Rapidez con estructura",
+          "description": "Avanzar rápido sin comprometer una base técnica ordenada."
+        },
+        "direct": {
+          "title": "Comunicación directa",
+          "description": "Las dudas y decisiones se resuelven con contexto y claridad."
+        },
+        "outcomes": {
+          "title": "Resultados antes que herramientas",
+          "description": "La tecnología se elige por el valor que puede aportar."
+        },
+        "maintainable": {
+          "title": "Sistemas mantenibles",
+          "description": "Cada solución debe poder evolucionar sin empezar de cero."
+        }
+      }
+    },
+    "founder": {
+      "eyebrow": "Quién lidera el estudio",
+      "role": "Fundador y desarrollador de Fuentivo",
+      "description": "José Fuentes lidera Fuentivo desde la definición del problema hasta la construcción de la solución. Su papel combina dirección de producto y desarrollo para mantener las decisiones conectadas con la necesidad real del negocio."
+    },
+    "cta": {
+      "eyebrow": "Inicia una conversación",
+      "title": "¿Hay algo en tu negocio que debería funcionar mejor?",
+      "description": "Cuéntanos el problema y evaluemos un siguiente paso claro, sin paquetes genéricos ni soluciones innecesarias.",
+      "primary": "Solicitar diagnóstico",
+      "whatsapp": "Escribir por WhatsApp",
+      "whatsappMessage": "Hola, conocí más sobre Fuentivo y quiero conversar sobre una solución para mi negocio."
+    }
+  },
   "NotFound": {
     "title": "Esta página no existe.",
     "description": "La dirección puede ser incorrecta o el contenido ya no está disponible. Puedes volver al inicio o explorar los proyectos públicos.",

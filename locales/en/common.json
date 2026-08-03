@@ -439,6 +439,88 @@
       "whatsappMessage": "Hi, I saw the case study on Fuentivo and would like to discuss a solution for my business."
     }
   },
+  "AboutPage": {
+    "metadata": {
+      "title": "About Fuentivo | Digital solutions studio",
+      "description": "Learn about the purpose, principles, and working approach behind Fuentivo, a studio that designs websites, business systems, and automations."
+    },
+    "intro": {
+      "eyebrow": "About Fuentivo",
+      "title": "Clear technology for businesses ready to move forward.",
+      "description": "Fuentivo was built around a simple idea: technology should help businesses move forward, not make their operations more complicated."
+    },
+    "identity": {
+      "eyebrow": "What Fuentivo is",
+      "title": "A digital studio focused on real problems.",
+      "description": "Fuentivo designs and builds websites, business systems, and automations around the way each company operates. It exists to turn commercial needs and hard-to-manage processes into clear, useful solutions that are ready to grow."
+    },
+    "approach": {
+      "eyebrow": "How we work",
+      "title": "The problem comes first. The tool comes next.",
+      "description": "Every project starts by understanding the people involved, the current process, and the outcome that matters. That context shapes the most useful scope, a maintainable build, and an experience tested under real conditions.",
+      "steps": {
+        "understand": {
+          "title": "Understand the context",
+          "description": "Identify what is slowing the business down, who uses the process, and where friction appears."
+        },
+        "define": {
+          "title": "Define what matters",
+          "description": "Prioritize a focused solution with clear decisions and a scope the business can sustain."
+        },
+        "build": {
+          "title": "Build and verify",
+          "description": "Create a useful experience across mobile and desktop, review it, and improve it with purpose."
+        }
+      }
+    },
+    "principles": {
+      "eyebrow": "Principles",
+      "title": "Criteria that guide every decision.",
+      "items": {
+        "clarity": {
+          "title": "Clarity before complexity",
+          "description": "The solution should be easy to understand and use."
+        },
+        "fit": {
+          "title": "Technology fitted to the business",
+          "description": "The tool should support the process, not dictate it."
+        },
+        "mobile": {
+          "title": "Real mobile experience",
+          "description": "Decisions reflect how people actually work and browse."
+        },
+        "structured": {
+          "title": "Speed with structure",
+          "description": "Move quickly without compromising an organized technical foundation."
+        },
+        "direct": {
+          "title": "Direct communication",
+          "description": "Questions and decisions are resolved with context and clarity."
+        },
+        "outcomes": {
+          "title": "Outcomes before tools",
+          "description": "Technology is chosen for the value it can create."
+        },
+        "maintainable": {
+          "title": "Maintainable systems",
+          "description": "Every solution should be able to evolve without starting over."
+        }
+      }
+    },
+    "founder": {
+      "eyebrow": "Who leads the studio",
+      "role": "Founder and developer at Fuentivo",
+      "description": "José Fuentes leads Fuentivo from defining the problem through building the solution. His role combines product direction and development so decisions stay connected to what the business actually needs."
+    },
+    "cta": {
+      "eyebrow": "Start a conversation",
+      "title": "Is there something in your business that should work better?",
+      "description": "Tell us about the problem, and let's evaluate a clear next step without generic packages or unnecessary solutions.",
+      "primary": "Discuss your project",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappMessage": "Hi, I learned more about Fuentivo and would like to discuss a solution for my business."
+    }
+  },
   "NotFound": {
     "title": "This page does not exist.",
     "description": "The address may be incorrect or the content is no longer available. You can return home or explore the public projects.",
