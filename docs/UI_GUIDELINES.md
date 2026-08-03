@@ -41,22 +41,9 @@ Regla rectora: **más preciso que decorativo.**
 }
 ```
 
-```ts
-// tailwind.config.ts
-colors: {
-  fuentivo: {
-    emerald: "#00B86A",
-    "emerald-hover": "#00945A",
-    "emerald-light": "#42D98F",
-    charcoal: "#111317",
-    surface: "#1B1F24",
-    border: "#2A3038",
-    white: "#F7F8FA",
-    secondary: "#D7DBE0",
-    muted: "#8D949D",
-  },
-}
-```
+Los tokens se exponen a Tailwind mediante el mecanismo recomendado por la versión instalada:
+configuración CSS-first cuando corresponda, o `tailwind.config.ts` cuando la versión lo
+requiera. Las variables anteriores son la única fuente de verdad; no duplicar valores hex.
 
 **Proporción de uso:** ~75% fondos/superficies oscuras · ~20% texto blanco/gris · ~5% emerald.
 El emerald **dirige la atención**, no compite por ella. Nunca cubrir grandes áreas con emerald.
@@ -130,7 +117,9 @@ Descripción de footer:
 - Formato: texto simple `ES · EN` o switch de dos estados, usando tokens de color existentes
   (estado activo en `--text-primary` o `--brand`, inactivo en `--text-muted`). Nunca banderas
   de países (Panamá no es representativo de "español" ni EE.UU. de "inglés" para esta marca).
-- El cambio debe ser instantáneo, sin recarga completa, preservando scroll y estado de la UI.
+- El selector navega a la ruta equivalente mediante navegación interna de Next.js, sin recarga
+  completa del documento. Debe conservar la página o proyecto equivalente; preservar el scroll
+  exacto o el estado local solo cuando sea útil y no añada complejidad innecesaria.
 - Debe respetarse en toda página, incluyendo metadata y `<html lang>`.
 
 ---

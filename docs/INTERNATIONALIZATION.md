@@ -2,28 +2,33 @@
 
 ## 1. Idiomas y jerarquía
 
-- **Español (LatAm/Panamá)** — idioma **primario**, por defecto, sin prefijo de ruta.
+- **Español (LatAm/Panamá)** — idioma **primario**, bajo el prefijo obligatorio `/es`.
 - **Inglés (americano)** — idioma **secundario**, para clientes internacionales o partners
-  angloparlantes.
+  angloparlantes, bajo el prefijo obligatorio `/en`.
 
 Ningún idioma es "el traducido" en el sentido de segunda clase: ambos deben sentirse
 escritos con cuidado, no como output automático de un traductor.
 
 ---
 
-## 2. Estrategia de enrutamiento (elegir una y documentarla)
+## 2. Estrategia oficial de enrutamiento
 
-Elegir **una sola** estrategia al iniciar el proyecto (Fase 1 de desarrollo) y no mezclarla
-a mitad de camino:
+La V1 usa prefijo obligatorio en todas las páginas públicas: `/es` para español y `/en` para
+inglés. La raíz `/` redirige siempre a `/es`; no se usa detección automática para sustituir
+esa decisión.
 
-- **Opción A — prefijo de ruta** (`/en/servicios`, `/en/proyectos/meniva`): mejor para SEO
-  internacional, cada idioma es indexable y compartible por separado. Recomendada si se
-  espera tráfico orgánico en inglés a mediano plazo.
-- **Opción B — mismo path, toggle en cliente** (estado guardado en cookie, sin cambiar la
-  URL): más simple de implementar, pero peor para SEO en inglés (Google indexa una sola
-  versión por URL).
+Los segmentos estáticos también se localizan:
 
-Documentar la decisión tomada en `docs/ARCHITECTURE_RULES.md` una vez implementada.
+- `/es/servicios` ↔ `/en/services`
+- `/es/proyectos` ↔ `/en/projects`
+- `/es/webs` ↔ `/en/websites`
+- `/es/sobre-fuentivo` ↔ `/en/about`
+- `/es/contacto` ↔ `/en/contact`
+- `/es/privacidad` ↔ `/en/privacy`
+
+Los slugs de proyectos permanecen iguales: `/es/proyectos/meniva` ↔
+`/en/projects/meniva`. Esta decisión es definitiva para la V1; no implementar un selector
+sin cambio de URL.
 
 ---
 
@@ -57,10 +62,12 @@ Documentar la decisión tomada en `docs/ARCHITECTURE_RULES.md` una vez implement
 
 - Ubicación: header, visible siempre, sin necesidad de abrir un menú.
 - Formato: texto simple `ES · EN`, nunca banderas de países.
-- Cambio instantáneo, sin recarga completa de la página, preservando scroll y estado de la
-  UI.
+- Navega a la ruta localizada equivalente mediante navegación interna de Next.js, sin recarga
+  completa del documento.
+- Conserva la página o proyecto equivalente. El scroll exacto y el estado local solo se
+  preservan cuando sea útil y no añada complejidad innecesaria.
 - El idioma elegido debe reflejarse en: `<html lang>`, metadata de la página, Open Graph,
-  y el sitemap (si se usa la Opción A de enrutamiento).
+  canonical, alternates y sitemap.
 
 ---
 

@@ -16,18 +16,18 @@ en inglés (ej. "web design agency Panama", "custom business software Latin Amer
 ## 2. Arquitectura de rutas SEO
 
 ```
-/servicios/desarrollo-web
-/servicios/sistemas-personalizados
-/servicios/automatizacion
-/soluciones/restaurantes
-/soluciones/negocios-de-servicios
-/proyectos
-/proyectos/[slug]
-/webs
+/es/servicios/desarrollo-web       ↔ /en/services/web-development
+/es/servicios/sistemas-personalizados ↔ /en/services/custom-systems
+/es/servicios/automatizacion       ↔ /en/services/automation
+/es/soluciones/restaurantes        ↔ /en/solutions/restaurants
+/es/soluciones/negocios-de-servicios ↔ /en/solutions/service-businesses
+/es/proyectos                      ↔ /en/projects
+/es/proyectos/[slug]               ↔ /en/projects/[slug]
+/es/webs                           ↔ /en/websites
 ```
 
-Si se usa prefijo de idioma (`docs/INTERNATIONALIZATION.md §2`, Opción A), cada ruta existe
-también como `/en/...` con su propia metadata.
+Todas las páginas públicas existen bajo `/es` y `/en`, con segmentos localizados y metadata
+propia. La raíz `/` redirige a `/es`.
 
 ---
 

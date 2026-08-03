@@ -4,6 +4,7 @@
 
 - **Next.js** (App Router) + **React** + **TypeScript**
 - **Tailwind CSS** + **shadcn/ui**
+- **next-intl** para i18n y rutas localizadas
 - **Motion** (`motion/react`) para animación
 - Componentes visuales adaptados de **Magic UI** y **Aceternity UI** (ver `UI_GUIDELINES.md`)
 - **Vercel** para hosting/deploy
@@ -28,18 +29,22 @@ content/
     └── index.ts          ← registro central, exporta todos los proyectos
 
 app/
-├── (marketing)/
-│   ├── page.tsx                    ← Inicio
-│   ├── servicios/page.tsx
-│   ├── proyectos/page.tsx          ← listado + filtros
-│   ├── proyectos/[slug]/page.tsx   ← ruta dinámica de caso de estudio
-│   ├── webs/page.tsx               ← vista filtrada category:"web"
-│   ├── sobre-fuentivo/page.tsx
-│   ├── contacto/page.tsx
-│   └── privacidad/page.tsx
+├── [locale]/
+│   ├── layout.tsx
+│   └── (marketing)/
+│       ├── page.tsx                    ← Inicio
+│       ├── services/page.tsx
+│       ├── projects/page.tsx           ← listado + filtros
+│       ├── projects/[slug]/page.tsx    ← ruta dinámica de caso de estudio
+│       ├── websites/page.tsx           ← vista filtrada category:"web"
+│       ├── about/page.tsx
+│       ├── contact/page.tsx
+│       └── privacy/page.tsx
 ├── api/
 │   └── contact/route.ts
-└── layout.tsx
+├── manifest.ts
+├── robots.ts
+└── sitemap.ts
 
 components/
 ├── layout/        (Header, Footer, MobileNav)
@@ -48,9 +53,16 @@ components/
 └── ui/             (botones, inputs, tarjetas base — shadcn extendido)
 
 lib/
-├── i18n.ts          ← utilidades de idioma
 ├── projects.ts      ← helpers (getFeatured, getByCategory, getBySlug)
 └── seo.ts           ← helpers de metadata
+
+i18n/
+├── routing.ts       ← locales y segmentos localizados
+├── navigation.ts    ← wrappers de navegación localizada
+└── request.ts       ← configuración por request
+
+config/
+└── site.ts          ← configuración central mínima del sitio
 
 locales/
 ├── es/*.json
@@ -148,7 +160,7 @@ presentes (ocultar secciones vacías, nunca mostrar "N/A").
 
 ## 4. Ruta dinámica de proyectos
 
-`/proyectos/[slug]` debe:
+`/es/proyectos/[slug]` y `/en/projects/[slug]` deben:
 
 1. Buscar el proyecto por `slug` en el registro central.
 2. Generar metadata (título, descripción, OG, canonical) en el idioma activo.
@@ -158,22 +170,24 @@ presentes (ocultar secciones vacías, nunca mostrar "N/A").
 6. Mantener el mismo sistema visual sin excepciones por proyecto.
 7. Devolver 404 si el slug no existe.
 
-`/webs` reutiliza el mismo catálogo, filtrando `category === "web"`. No debe duplicar datos.
+`/es/webs` y `/en/websites` reutilizan el mismo catálogo, filtrando
+`category === "web"`. No deben duplicar datos.
 
 ---
 
 ## 5. i18n — arquitectura
 
-- Estrategia recomendada V1: **toggle de idioma en cliente sin duplicar rutas** (mismo path,
-  contenido cambia según `locale` guardado en cookie/localStorage-equivalente de servidor +
-  parámetro `?lang=` como fallback para compartir enlaces), **o** prefijo de ruta `/en/...`
-  si se prioriza SEO internacional (`/en/services`, `/en/projects`). Elegir una sola estrategia
-  y documentarla en el PR — no mezclar ambas a mitad de proyecto.
-- Español es el idioma por defecto (sin prefijo `/es`).
+- Estrategia oficial V1: prefijo de idioma obligatorio en todas las páginas públicas.
+- Español usa `/es`; inglés usa `/en`; la raíz `/` redirige siempre a `/es`.
+- Los segmentos públicos se localizan mediante una única definición central de rutas. Por
+  ejemplo: `/es/proyectos/meniva` ↔ `/en/projects/meniva`.
+- Los slugs de proyectos permanecen iguales en ambos idiomas.
+- No implementar un toggle sin cambio de URL ni mantener versiones separadas de una página.
 - Todo string visible vive en `locales/es/*.json` y `locales/en/*.json`, o en el campo
   `LocalizedText` del proyecto si es contenido de portafolio.
 - Metadata, `<html lang>`, Open Graph y sitemap deben reflejar el idioma activo.
-- El toggle no debe recargar toda la experiencia visual (mismo scroll, mismo estado).
+- El selector navega a la ruta localizada equivalente mediante navegación interna de Next.js,
+  sin recarga completa del documento. Preservar scroll o estado local solo cuando sea útil.
 
 ---
 
@@ -189,7 +203,7 @@ Cuando el usuario diga _"Agrega esta nueva web/proyecto al portafolio"_, el agen
 6. Optimizar y ubicar imágenes en `public/projects/<slug>/`.
 7. Agregar el proyecto al `index.ts` del registro.
 8. Verificar que la metadata SEO esté completa en ambos idiomas.
-9. Confirmar que la ruta `/proyectos/<slug>` carga, sin romper otras rutas.
+9. Confirmar que `/es/proyectos/<slug>` y `/en/projects/<slug>` cargan, sin romper otras rutas.
 10. Ejecutar `lint`, `type-check`, `build`.
 11. Verificar desktop, mobile y `reduced-motion`.
 12. No modificar componentes globales (Header, Footer, Hero) salvo necesidad real y explícita.
@@ -223,14 +237,14 @@ inicial automáticamente.
 ## 8. SEO técnico — arquitectura de rutas
 
 ```
-/servicios/desarrollo-web
-/servicios/sistemas-personalizados
-/servicios/automatizacion
-/soluciones/restaurantes
-/soluciones/negocios-de-servicios
-/proyectos
-/proyectos/[slug]
-/webs
+/es/servicios/desarrollo-web       ↔ /en/services/web-development
+/es/servicios/sistemas-personalizados ↔ /en/services/custom-systems
+/es/servicios/automatizacion       ↔ /en/services/automation
+/es/soluciones/restaurantes        ↔ /en/solutions/restaurants
+/es/soluciones/negocios-de-servicios ↔ /en/solutions/service-businesses
+/es/proyectos                      ↔ /en/projects
+/es/proyectos/[slug]               ↔ /en/projects/[slug]
+/es/webs                           ↔ /en/websites
 ```
 
 Cada proyecto genera automáticamente: título, descripción, canonical, Open Graph, imagen

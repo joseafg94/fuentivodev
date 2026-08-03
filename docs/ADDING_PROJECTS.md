@@ -53,9 +53,9 @@ preguntar antes de inventar contenido — nunca rellenar huecos con suposiciones
 4. Agregar el proyecto al registro central `content/projects/index.ts`.
 5. Completar `seo.es` y `seo.en` (título, descripción, imagen) — ver
    `docs/SEO_ACCESSIBILITY.md §3`.
-6. Confirmar que `/proyectos/<slug>` (y `/en/proyectos/<slug>` si aplica) carga
-   correctamente y que el proyecto aparece en `/proyectos` y, si corresponde, en `/webs` o
-   en Inicio (si es `featured`).
+6. Confirmar que `/es/proyectos/<slug>` y `/en/projects/<slug>` cargan correctamente y que
+   el proyecto aparece en `/es/proyectos` y `/en/projects` y, si corresponde, en
+   `/es/webs` y `/en/websites` o en Inicio (si es `featured`).
 7. Ejecutar `lint`, `type-check`, `build`.
 8. Verificar visualmente: desktop, mobile, `reduced-motion`, ES y EN.
 9. No modificar componentes globales (Header, Footer, Hero, ProjectCard) salvo necesidad real

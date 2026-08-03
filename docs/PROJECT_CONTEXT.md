@@ -143,14 +143,14 @@ rediseño · MVP
 
 ## 8. Arquitectura de páginas (V1)
 
-- Inicio
-- Servicios
-- Proyectos (`/proyectos`)
-- Webs (`/webs`, vista filtrada de `category: "web"`)
-- Caso de estudio: Meniva (`/proyectos/meniva`)
-- Sobre Fuentivo
-- Contacto
-- Política de privacidad
+- Inicio (`/es` ↔ `/en`)
+- Servicios (`/es/servicios` ↔ `/en/services`)
+- Proyectos (`/es/proyectos` ↔ `/en/projects`)
+- Webs (`/es/webs` ↔ `/en/websites`, vista filtrada de `category: "web"`)
+- Caso de estudio: Meniva (`/es/proyectos/meniva` ↔ `/en/projects/meniva`)
+- Sobre Fuentivo (`/es/sobre-fuentivo` ↔ `/en/about`)
+- Contacto (`/es/contacto` ↔ `/en/contact`)
+- Política de privacidad (`/es/privacidad` ↔ `/en/privacy`)
 
 **Futuro (no V1):** Blog, Recursos, Plantillas, Casos de éxito, FAQ, páginas por industria,
 páginas por servicio, Experimentos, Productos propios.
@@ -190,6 +190,8 @@ criterio tiene, cómo trabaja, por qué se puede confiar. Máximo 3–4 párrafo
   exterior o revisar el sitio con partners angloparlantes.
 - El cambio de idioma es un **toggle explícito** en el header (no autodetección forzada que
   reemplace la elección del usuario sin control), ver detalle en `UI_GUIDELINES.md`.
+- Todas las páginas públicas usan prefijo obligatorio (`/es` o `/en`) y la raíz `/` redirige
+  a `/es`. Los segmentos estáticos se localizan; los slugs de proyectos permanecen iguales.
 - Ningún contenido puede existir solo en un idioma. Si se agrega una sección/proyecto nuevo,
   la tarea no está completa sin su versión en el otro idioma (ver `rules-workspace.md`).
 - Las traducciones deben sonar naturales en cada idioma, no traducciones literales palabra por

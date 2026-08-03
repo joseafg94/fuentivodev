@@ -41,7 +41,7 @@ Medir en mobile (no solo desktop) y en ambos idiomas.
 
 - Páginas de marketing (Inicio, Servicios, Sobre Fuentivo) como estáticas (SSG) siempre que
   sea posible.
-- Páginas de proyectos (`/proyectos/[slug]`) generadas estáticamente en build (los datos viven
+- Páginas de proyectos (`/es/proyectos/[slug]` y `/en/projects/[slug]`) generadas estáticamente en build (los datos viven
   en archivos TS del repo, no en una API externa) — no requieren revalidación runtime salvo que
   se migre a CMS a futuro.
 - Si se migra a un CMS headless más adelante, usar ISR (`revalidate`) en vez de SSR completo
@@ -56,8 +56,11 @@ Medir en mobile (no solo desktop) y en ambos idiomas.
 - Cargar componentes de animación pesados (Aceternity/Magic UI/React Bits) con `dynamic()` y
   `ssr: false` cuando no afecten el contenido crítico visible sin JS.
 - Nunca importar una librería completa por un solo efecto (tree-shaking siempre revisado).
-- Diferir (lazy-load) secciones bajo el pliegue (below the fold): Proyectos destacados,
-  Cómo trabajamos, Por qué Fuentivo, CTA final — cargarlas cuando entran en viewport.
+- Las secciones editoriales estáticas permanecen como Server Components y se renderizan en el
+  HTML inicial.
+- Aplicar lazy loading a imágenes bajo el pliegue, galerías, demos interactivas, animaciones
+  pesadas y componentes exclusivamente de cliente.
+- No usar `dynamic()` ni `ssr: false` para una sección estática solo por estar bajo el pliegue.
 - Un único observer de scroll reutilizado para animaciones de entrada, no uno por sección.
 
 ---
@@ -86,7 +89,7 @@ Medir en mobile (no solo desktop) y en ambos idiomas.
 
 - Con pocos proyectos (V1): renderizar todo el listado sin paginación.
 - Cuando el catálogo crezca (aprox. >18–24 proyectos): agregar paginación o "cargar más" en
-  `/proyectos`, y considerar búsqueda (client-side simple, sin librería pesada, hasta que el
+  `/es/proyectos` y `/en/projects`, y considerar búsqueda (client-side simple, sin librería pesada, hasta que el
   volumen lo justifique).
 - Filtros por categoría deben operar sobre datos ya cargados (sin refetch), evitando
   llamadas de red innecesarias.

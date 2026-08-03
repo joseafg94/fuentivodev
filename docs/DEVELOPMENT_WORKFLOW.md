@@ -32,19 +32,54 @@ Ejecutar en orden. No saltar una fase antes de cerrar la anterior con su checkli
 **Prompt:**
 
 ```
-Lee AGENTS.md, rules-workspace.md, docs/PROJECT_CONTEXT.md, docs/ARCHITECTURE_RULES.md y
-docs/UI_GUIDELINES.md completos antes de escribir código.
+Lee completamente, en este orden:
 
-Crea un proyecto Next.js (App Router) con TypeScript, Tailwind CSS y shadcn/ui, siguiendo
-exactamente la estructura de carpetas de docs/ARCHITECTURE_RULES.md §2.
+1. AGENTS.md
+2. rules-workspace.md
+3. docs/PROJECT_CONTEXT.md
+4. docs/ARCHITECTURE_RULES.md
+5. docs/CONTENT_MODEL.md
+6. docs/UI_GUIDELINES.md
+7. docs/PERFORMANCE_RULES.md
+8. docs/INTERNATIONALIZATION.md
+9. docs/SEO_ACCESSIBILITY.md
+10. docs/DEVELOPMENT_WORKFLOW.md
+11. docs/ACCEPTANCE_CHECKLIST.md
 
-Configura en tailwind.config.ts la paleta "fuentivo" de docs/UI_GUIDELINES.md §2, y las
-variables CSS del mismo apartado en globals.css.
+Antes de modificar código, inspecciona el estado actual del repositorio y reporta cualquier
+contradicción entre la implementación existente y la documentación.
 
-Configura next/font para Sora, Inter y Geist Mono según docs/PERFORMANCE_RULES.md §3.
+Implementa únicamente la Fase 0: fundamento técnico del proyecto. No construyas todavía la
+Home, Header, Footer, páginas de servicio, páginas de proyectos ni componentes editoriales.
 
-Solo el esqueleto, el sistema de diseño (colores, tipografía, espaciado) y layout.tsx base.
-Ejecuta lint, type-check y build, y confírmame que pasan.
+Objetivos:
+
+1. Configurar Next.js con App Router, React y TypeScript estricto.
+2. Configurar Tailwind CSS siguiendo el mecanismo recomendado por la versión instalada.
+3. Configurar shadcn/ui.
+4. Instalar y configurar Motion mediante `motion/react`.
+5. Configurar la infraestructura base de `next-intl`.
+6. Usar prefijos obligatorios `/es` y `/en`; `/` debe redirigir a `/es`.
+7. Preparar rutas localizadas, sin implementar todavía las páginas comerciales completas.
+8. Configurar `next/font` para Sora, Inter y Geist Mono con los pesos necesarios.
+9. Configurar los tokens oficiales de color, tipografía, espaciado, radios y foco de
+   `docs/UI_GUIDELINES.md`.
+10. Crear la estructura base de carpetas definida en `docs/ARCHITECTURE_RULES.md`, sin añadir
+    archivos especulativos que todavía no tengan función.
+11. Configurar alias `@/*`, ESLint, `type-check`, `.env.example`, configuración central
+    mínima del sitio, metadata global base, manifest PWA básico, robots y sitemap base sin
+    inventar rutas no implementadas.
+12. Mantener Server Components por defecto y no usar `use client` salvo necesidad real.
+13. No agregar PostHog, Resend, formularios, GSAP, WebGL, Canvas, CMS, base de datos ni Redux.
+14. No implementar animaciones visuales; solo dejar Motion instalado y preparado.
+15. No crear contenido falso ni placeholders públicos.
+
+Sigue las versiones instaladas y su documentación vigente. No crees `tailwind.config.ts` si
+la versión usa configuración CSS-first; no dupliques tokens ni páginas por idioma; no uses
+`dynamic()` o `ssr: false` para contenido estático. Documenta cualquier desviación necesaria.
+
+Al terminar ejecuta `pnpm lint`, `pnpm type-check` y `pnpm build`, y entrega el reporte de
+Fase 0 definido en este documento sin avanzar a Fase 1.
 ```
 
 ### Fase 1 — Header, Footer y navegación (incluye toggle ES/EN)
@@ -59,9 +94,8 @@ Usando docs/UI_GUIDELINES.md §6-7 y docs/INTERNATIONALIZATION.md, construye:
    banderas). Semitransparente + blur al hacer scroll.
 2. components/layout/Footer.tsx según docs/UI_GUIDELINES.md §6.
 3. components/layout/MobileNav.tsx con menú completo + botón de WhatsApp visible.
-4. La infraestructura mínima de i18n (lib/i18n.ts + locales/es + locales/en). Decide y
-   documenta en un comentario si usas prefijo de ruta /en o toggle sin cambio de ruta, según
-   docs/INTERNATIONALIZATION.md §2.
+4. Extiende la infraestructura de i18n creada en Fase 0 (`i18n/` + `locales/es` +
+   `locales/en`) usando las rutas localizadas definitivas de `docs/INTERNATIONALIZATION.md §2`.
 
 Verifica reduced motion, mobile y ambos idiomas antes de terminar.
 ```
@@ -87,7 +121,7 @@ Solo el modelo de datos y los helpers, con type-check en verde.
 **Prompt:**
 
 ```
-Construye app/(marketing)/page.tsx siguiendo docs/PROJECT_CONTEXT.md §2 y §5 (embeber
+Construye app/[locale]/(marketing)/page.tsx siguiendo docs/PROJECT_CONTEXT.md §2 y §5 (embeber
 WhatsApp/Yappy con naturalidad en "Cómo trabajamos", nunca como sección aislada de pagos):
 
 1. Hero — animación protagonista de docs/UI_GUIDELINES.md §8. Titular: "Creamos soluciones
@@ -103,8 +137,8 @@ WhatsApp/Yappy con naturalidad en "Cómo trabajamos", nunca como sección aislad
 7. CTA final con botón de WhatsApp (mensaje precargado de docs/PROJECT_CONTEXT.md §5).
 
 Todo en ambos idiomas. Patrones de animación consistentes entre secciones
-(docs/UI_GUIDELINES.md §8). Lazy-load de secciones bajo el pliegue
-(docs/PERFORMANCE_RULES.md §5).
+(docs/UI_GUIDELINES.md §8). Mantén las secciones editoriales como Server Components. Aplica
+lazy loading únicamente a imágenes, galerías o elementos interactivos no críticos.
 ```
 
 ### Fase 4 — Servicios (página propia)
@@ -112,7 +146,7 @@ Todo en ambos idiomas. Patrones de animación consistentes entre secciones
 **Prompt:**
 
 ```
-Construye app/(marketing)/servicios/page.tsx desarrollando en profundidad las 3 líneas de
+Construye app/[locale]/(marketing)/services/page.tsx desarrollando en profundidad las 3 líneas de
 docs/PROJECT_CONTEXT.md §6. En Automatización, menciona el uso de WhatsApp para
 chatbots/atención automatizada como parte de lo que Fuentivo construye para clientes (sin
 confundirlo con el WhatsApp de contacto con Fuentivo). Reutiliza componentes existentes.
@@ -124,11 +158,11 @@ confundirlo con el WhatsApp de contacto con Fuentivo). Reutiliza componentes exi
 
 ```
 Construye:
-1. app/(marketing)/proyectos/page.tsx — listado completo con filtros por categoría (Todos,
+1. app/[locale]/(marketing)/projects/page.tsx — listado completo con filtros por categoría (Todos,
    Webs, Sistemas, Aplicaciones, Automatizaciones, Productos), orden por fecha, usando
    lib/projects.ts. Sin paginación por ahora (docs/PERFORMANCE_RULES.md §8), pero preparado
    para agregarla.
-2. app/(marketing)/webs/page.tsx — misma infraestructura, filtrando category:"web"
+2. app/[locale]/(marketing)/websites/page.tsx — misma infraestructura, filtrando category:"web"
    automáticamente, sin duplicar datos.
 
 Usa components/projects/ProjectCard.tsx reutilizable en ambas vistas y en Inicio.
@@ -139,7 +173,7 @@ Usa components/projects/ProjectCard.tsx reutilizable en ambas vistas y en Inicio
 **Prompt:**
 
 ```
-Construye app/(marketing)/proyectos/[slug]/page.tsx siguiendo docs/ARCHITECTURE_RULES.md
+Construye app/[locale]/(marketing)/projects/[slug]/page.tsx siguiendo docs/ARCHITECTURE_RULES.md
 §4: busca por slug, genera metadata en el idioma activo (docs/SEO_ACCESSIBILITY.md §3),
 muestra solo las secciones con contenido disponible (docs/CONTENT_MODEL.md §3), agrega
 proyectos relacionados de la misma categoría, devuelve 404 si el slug no existe.
@@ -153,7 +187,7 @@ visibles.
 **Prompt:**
 
 ```
-Construye app/(marketing)/sobre-fuentivo/page.tsx con el contenido de
+Construye app/[locale]/(marketing)/about/page.tsx con el contenido de
 docs/PROJECT_CONTEXT.md §10, máximo 3-4 párrafos, presentando a José Fuentes como fundador
 de la marca (la marca es protagonista). Sin inventar premios, clientes o cifras.
 ```
@@ -163,7 +197,7 @@ de la marca (la marca es protagonista). Sin inventar premios, clientes o cifras.
 **Prompt:**
 
 ```
-Construye app/(marketing)/contacto/page.tsx y app/api/contact/route.ts siguiendo
+Construye app/[locale]/(marketing)/contact/page.tsx y app/api/contact/route.ts siguiendo
 docs/ARCHITECTURE_RULES.md §9: formulario (Nombre, Negocio/empresa, WhatsApp o correo,
 "¿Qué necesitas?"), validado con Zod + React Hook Form, enviado vía Resend (variables de
 entorno, sin claves hardcodeadas).
@@ -180,7 +214,7 @@ interactivo).
 **Prompt:**
 
 ```
-Crea app/(marketing)/privacidad/page.tsx con una política de privacidad estándar y clara.
+Crea app/[locale]/(marketing)/privacy/page.tsx con una política de privacidad estándar y clara.
 
 Implementa SEO técnico completo según docs/SEO_ACCESSIBILITY.md: metadata única por página
 en ambos idiomas, sitemap.xml dinámico incluyendo todos los proyectos y ambas variantes de
