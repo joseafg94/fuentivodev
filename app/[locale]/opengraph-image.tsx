@@ -15,6 +15,9 @@ export default async function OpenGraphImage({ params }: OpenGraphImageProps) {
   const title = locale === "en"
     ? "Digital solutions for businesses ready to move forward."
     : "Soluciones digitales para negocios que quieren avanzar.";
+  const services = locale === "en"
+    ? "Websites · Business systems · Automation"
+    : "Páginas web · Sistemas para negocios · Automatización";
 
   return new ImageResponse(
     <div
@@ -37,7 +40,7 @@ export default async function OpenGraphImage({ params }: OpenGraphImageProps) {
           {title}
         </div>
         <div style={{ color: "#aeb5b2", display: "flex", fontSize: 26, marginTop: 42 }}>
-          Websites · Business systems · Automation
+          {services}
         </div>
       </div>
     </div>,

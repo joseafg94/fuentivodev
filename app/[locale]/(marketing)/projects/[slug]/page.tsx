@@ -15,6 +15,8 @@ type ProjectPageProps = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getProjectStaticParams(routing.locales);
 }
