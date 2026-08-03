@@ -9,9 +9,11 @@ import type { Project } from "@/content/projects";
 import {
   getFeaturedProjects,
   getProjectBySlug,
+  getProjectStaticParams,
   getProjectsByCategory,
   getPublicProjects,
   isProjectPublic,
+  shouldIndexProject,
 } from "@/lib/projects";
 
 describe("project data", () => {
@@ -63,5 +65,21 @@ describe("project data", () => {
     expect(getPublicProjects().some((project) => project.status === "archived")).toBe(
       false,
     );
+  });
+
+  it("generates both localized static routes for Meniva", () => {
+    expect(getProjectStaticParams(["es", "en"])).toEqual(
+      expect.arrayContaining([
+        { locale: "es", slug: "meniva" },
+        { locale: "en", slug: "meniva" },
+      ]),
+    );
+  });
+
+  it("only indexes published projects", () => {
+    const concept: Project = { ...meniva, status: "concept" };
+
+    expect(shouldIndexProject(meniva)).toBe(true);
+    expect(shouldIndexProject(concept)).toBe(false);
   });
 });

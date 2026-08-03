@@ -38,6 +38,16 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return getPublicProjects().find((project) => project.slug === slug);
 }
 
+export function getProjectStaticParams(locales: readonly string[]) {
+  return locales.flatMap((locale) =>
+    getPublicProjects().map((project) => ({ locale, slug: project.slug })),
+  );
+}
+
+export function shouldIndexProject(project: Project): boolean {
+  return project.status === "published";
+}
+
 export function getRelatedProjects(project: Project, limit = 3): Project[] {
   if (limit <= 0) {
     return [];

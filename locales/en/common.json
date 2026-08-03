@@ -384,5 +384,65 @@
       "title": "No websites have been published yet.",
       "description": "This view will remain empty until a real, complete website project is approved for publication."
     }
+  },
+  "ProjectDetail": {
+    "breadcrumbs": {
+      "home": "Home",
+      "projects": "Projects"
+    },
+    "metadata": {
+      "year": "Year",
+      "category": "Category",
+      "status": "Status",
+      "industry": "Industry"
+    },
+    "sections": {
+      "overview": "Overview",
+      "challenge": "The challenge",
+      "objective": "The objective",
+      "solution": "The solution",
+      "process": "Process",
+      "features": "Core features",
+      "uxDecisions": "Experience decisions",
+      "gallery": "Gallery",
+      "results": "Results",
+      "testimonial": "Testimonial",
+      "technologies": "Technologies",
+      "links": "Links",
+      "related": "Related projects"
+    },
+    "galleryAlt": "project view",
+    "links": {
+      "live": "View project",
+      "repository": "View repository"
+    },
+    "category": {
+      "web": "Website",
+      "system": "System",
+      "application": "Application",
+      "automation": "Automation",
+      "product": "Product",
+      "experiment": "Experiment"
+    },
+    "status": {
+      "published": "In production",
+      "in-progress": "In progress",
+      "concept": "Concept",
+      "archived": "Archived"
+    },
+    "cta": {
+      "eyebrow": "Let's talk",
+      "title": "Do you need a solution designed around your operation?",
+      "description": "Tell us what is slowing your business down, and let's evaluate a clear way to solve it.",
+      "primary": "Discuss your project",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappMessage": "Hi, I saw the case study on Fuentivo and would like to discuss a solution for my business."
+    }
+  },
+  "NotFound": {
+    "title": "This page does not exist.",
+    "description": "The address may be incorrect or the content is no longer available. You can return home or explore the public projects.",
+    "home": "Back to home",
+    "projects": "View projects"
   }
 }

@@ -23,6 +23,13 @@ export const mobileNavigation = [
   ...primaryNavigation,
 ] as const;
 
+export function getProjectRoute(slug: string) {
+  return {
+    pathname: "/projects/[slug]" as const,
+    params: { slug },
+  };
+}
+
 export function isRouteActive(pathname: string, href: AppRoute) {
   if (href === appRoutes.home) {
     return pathname === href;

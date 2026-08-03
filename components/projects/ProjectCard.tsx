@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Project } from "@/content/projects";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import { getProjectRoute } from "@/lib/routes";
 
 type ProjectCardProps = {
   project: Project;
@@ -22,10 +23,7 @@ export function ProjectCard({
   viewProjectLabel,
   liveProjectLabel,
 }: ProjectCardProps) {
-  const projectHref = {
-    pathname: "/projects/[slug]" as const,
-    params: { slug: project.slug },
-  };
+  const projectHref = getProjectRoute(project.slug);
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-card-large border border-border bg-card transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_24px_80px_-40px_rgba(0,184,106,0.5)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">

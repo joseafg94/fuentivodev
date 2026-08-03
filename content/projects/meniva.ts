@@ -24,6 +24,7 @@ export const meniva = defineProject({
   },
   coverImage: "/projects/meniva/cover.png",
   thumbnailImage: "/projects/meniva/thumbnail.png",
+  gallery: ["/projects/meniva/thumbnail.png"],
   services: ["Diseño UX/UI", "Desarrollo de aplicaciones web"],
   technologies: [
     "Next.js 15",

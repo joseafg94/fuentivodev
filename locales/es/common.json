@@ -384,5 +384,65 @@
       "title": "Aún no hay webs publicadas.",
       "description": "Esta vista permanecerá vacía hasta que exista un proyecto web real, completo y aprobado para publicación."
     }
+  },
+  "ProjectDetail": {
+    "breadcrumbs": {
+      "home": "Inicio",
+      "projects": "Proyectos"
+    },
+    "metadata": {
+      "year": "Año",
+      "category": "Categoría",
+      "status": "Estado",
+      "industry": "Industria"
+    },
+    "sections": {
+      "overview": "Resumen",
+      "challenge": "El problema",
+      "objective": "El objetivo",
+      "solution": "La solución",
+      "process": "Proceso",
+      "features": "Funciones principales",
+      "uxDecisions": "Decisiones de experiencia",
+      "gallery": "Galería",
+      "results": "Resultados",
+      "testimonial": "Testimonio",
+      "technologies": "Tecnologías",
+      "links": "Enlaces",
+      "related": "Proyectos relacionados"
+    },
+    "galleryAlt": "vista del proyecto",
+    "links": {
+      "live": "Ver proyecto",
+      "repository": "Ver repositorio"
+    },
+    "category": {
+      "web": "Web",
+      "system": "Sistema",
+      "application": "Aplicación",
+      "automation": "Automatización",
+      "product": "Producto",
+      "experiment": "Experimento"
+    },
+    "status": {
+      "published": "En producción",
+      "in-progress": "En desarrollo",
+      "concept": "Concepto",
+      "archived": "Archivado"
+    },
+    "cta": {
+      "eyebrow": "Conversemos",
+      "title": "¿Necesitas una solución pensada para tu operación?",
+      "description": "Cuéntanos qué está frenando a tu negocio y evaluemos una forma clara de resolverlo.",
+      "primary": "Solicitar diagnóstico",
+      "whatsapp": "Escribir por WhatsApp",
+      "whatsappMessage": "Hola, vi el caso de estudio en Fuentivo y quiero conversar sobre una solución para mi negocio."
+    }
+  },
+  "NotFound": {
+    "title": "Esta página no existe.",
+    "description": "La dirección puede ser incorrecta o el contenido ya no está disponible. Puedes volver al inicio o explorar los proyectos públicos.",
+    "home": "Volver al inicio",
+    "projects": "Ver proyectos"
   }
 }
