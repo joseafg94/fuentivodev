@@ -12,6 +12,7 @@ const staticRoutes = [
   appRoutes.projects,
   appRoutes.websites,
   appRoutes.about,
+  appRoutes.contact,
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

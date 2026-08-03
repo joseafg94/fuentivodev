@@ -521,6 +521,82 @@
       "whatsappMessage": "Hola, conocí más sobre Fuentivo y quiero conversar sobre una solución para mi negocio."
     }
   },
+  "ContactPage": {
+    "metadata": {
+      "title": "Contacto | Conversemos sobre tu proyecto — Fuentivo",
+      "description": "Cuéntale a Fuentivo qué necesita mejorar tu negocio y conversemos sobre una página web, sistema personalizado o automatización."
+    },
+    "intro": {
+      "eyebrow": "Contacto",
+      "title": "Empecemos por el problema que necesitas resolver.",
+      "description": "Comparte el contexto de tu negocio y lo que hoy debería funcionar mejor. Revisaremos si una solución digital puede aportar un siguiente paso claro."
+    },
+    "form": {
+      "title": "Cuéntanos lo esencial.",
+      "description": "No necesitas preparar un documento técnico. Una explicación breve del problema y del proceso actual es suficiente para comenzar.",
+      "fields": {
+        "name": { "label": "Nombre" },
+        "business": { "label": "Negocio o empresa" },
+        "contact": {
+          "label": "WhatsApp o correo",
+          "help": "Incluye un correo válido o un número con código de país cuando corresponda."
+        },
+        "need": {
+          "label": "¿Qué necesitas?",
+          "options": {
+            "website": "Página web",
+            "custom-system": "Sistema personalizado",
+            "automation": "Automatización",
+            "improve-existing": "Mejorar un proyecto existente",
+            "unsure": "No estoy seguro"
+          }
+        },
+        "message": {
+          "label": "Mensaje",
+          "help": "Describe qué ocurre hoy, a quién afecta y qué te gustaría mejorar."
+        }
+      },
+      "validation": {
+        "name": { "invalid": "Escribe un nombre válido de 2 a 80 caracteres." },
+        "business": { "invalid": "Escribe el nombre del negocio o empresa." },
+        "contact": { "invalid": "Escribe un correo válido o un número de 7 a 15 dígitos." },
+        "need": { "invalid": "Selecciona una opción válida." },
+        "message": {
+          "tooShort": "El mensaje debe tener al menos 20 caracteres.",
+          "tooLong": "El mensaje no puede superar 2000 caracteres."
+        }
+      },
+      "submit": {
+        "idle": "Enviar mensaje",
+        "submitting": "Enviando…"
+      },
+      "status": {
+        "submitting": "Estamos enviando tu mensaje.",
+        "success": "Mensaje enviado. Gracias por compartir el contexto.",
+        "failure": "No pudimos enviar el mensaje. Tus datos siguen en el formulario y puedes intentarlo otra vez.",
+        "invalid": "Revisa los campos marcados antes de enviar.",
+        "spam": "El envío fue rechazado por la protección anti-spam.",
+        "whatsappFallback": "Continuar por WhatsApp"
+      }
+    },
+    "alternatives": {
+      "label": "Formas alternativas de contacto",
+      "title": "También puedes escribir directamente.",
+      "description": "Usa WhatsApp para una conversación rápida o correo si prefieres compartir más contexto."
+    },
+    "whatsapp": {
+      "cta": "Escribir por WhatsApp",
+      "message": "Hola, vi la web de Fuentivo y me gustaría conversar sobre una solución digital para mi negocio."
+    },
+    "payments": {
+      "title": "Pagos en Panamá",
+      "description": "Aceptamos pagos por Yappy y transferencia, sin procesos complicados."
+    },
+    "privacy": {
+      "description": "Usaremos estos datos únicamente para responder tu consulta y evaluar el proyecto.",
+      "link": "Consulta la política de privacidad."
+    }
+  },
   "NotFound": {
     "title": "Esta página no existe.",
     "description": "La dirección puede ser incorrecta o el contenido ya no está disponible. Puedes volver al inicio o explorar los proyectos públicos.",
