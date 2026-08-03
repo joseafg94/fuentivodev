@@ -29,5 +29,150 @@
       "privacy": "Política de privacidad",
       "copyright": "Fuentivo. Todos los derechos reservados."
     }
+  },
+  "Home": {
+    "metadata": {
+      "title": "Fuentivo | Páginas web, sistemas y automatizaciones",
+      "description": "Fuentivo diseña páginas web, sistemas y automatizaciones adaptadas a la operación real de negocios en Panamá y Latinoamérica."
+    },
+    "hero": {
+      "eyebrow": "Estudio de producto y soluciones digitales",
+      "title": "Creamos soluciones digitales que hacen avanzar tu negocio.",
+      "description": "Diseñamos páginas web, sistemas y automatizaciones simples, rápidas y adaptadas a la manera en que operan los negocios de Panamá y Latinoamérica.",
+      "primaryCta": "Solicitar diagnóstico",
+      "secondaryCta": "Ver proyectos",
+      "whatsapp": "Hablar por WhatsApp",
+      "whatsappMessage": "Hola, vi la web de Fuentivo y me gustaría solicitar un diagnóstico para mi negocio.",
+      "visual": {
+        "presence": "Presencia digital",
+        "system": "Sistema de negocio",
+        "automation": "Automatización",
+        "connected": "Un flujo conectado"
+      }
+    },
+    "problems": {
+      "eyebrow": "Problemas que resolvemos",
+      "title": "La tecnología debería quitar fricción, no agregarla.",
+      "description": "Partimos del problema operativo o comercial, no de una lista de herramientas. Estas son algunas señales de que una solución digital puede ayudar.",
+      "items": {
+        "contacts": "Tu página recibe visitas, pero no genera contactos.",
+        "presence": "La presencia digital no refleja la calidad del negocio.",
+        "manual": "Los procesos manuales consumen tiempo todos los días.",
+        "scattered": "La información vive dispersa entre WhatsApp y Excel.",
+        "repetitive": "El equipo repite tareas que podrían simplificarse.",
+        "complex": "Los sistemas actuales son más complejos de lo necesario.",
+        "rigid": "Las herramientas obligan al negocio a cambiar su forma de operar."
+      }
+    },
+    "services": {
+      "eyebrow": "Qué construimos",
+      "title": "Soluciones claras para operar y crecer mejor.",
+      "description": "Cada proyecto conecta una necesidad concreta con una solución que el equipo pueda usar y mantener.",
+      "problemLabel": "Problema",
+      "outcomeLabel": "Resultado",
+      "link": "Explorar servicios",
+      "items": {
+        "presence": {
+          "title": "Presencia digital",
+          "problem": "El negocio no comunica con claridad lo que ofrece o depende de canales que no controla.",
+          "outcome": "Una presencia profesional que explica, genera confianza y facilita el contacto.",
+          "examples": "Páginas corporativas, landing pages y sitios para restaurantes."
+        },
+        "systems": {
+          "title": "Sistemas para negocios",
+          "problem": "La información y las tareas clave están repartidas entre archivos, chats y procesos manuales.",
+          "outcome": "Una operación más ordenada con la información necesaria en un solo lugar.",
+          "examples": "Paneles internos, portales, inventarios y herramientas operativas."
+        },
+        "automation": {
+          "title": "Automatización",
+          "problem": "El equipo invierte tiempo en tareas repetitivas, seguimientos y traspasos de información.",
+          "outcome": "Flujos más ágiles que reducen trabajo manual y mantienen el control humano.",
+          "examples": "Notificaciones, seguimiento de prospectos e integración de procesos."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Trabajo seleccionado",
+      "title": "Proyectos que convierten una necesidad en una herramienta útil.",
+      "description": "Productos y soluciones diseñados alrededor de operaciones reales, sin atribuir resultados que todavía no han sido medidos.",
+      "viewAll": "Ver todos los proyectos",
+      "viewProject": "Ver proyecto",
+      "status": {
+        "published": "En producción",
+        "in-progress": "En desarrollo",
+        "concept": "Concepto",
+        "archived": "Archivado"
+      }
+    },
+    "process": {
+      "eyebrow": "Cómo trabajamos",
+      "title": "Un proceso claro de principio a fin.",
+      "description": "Cada etapa reduce incertidumbre y mantiene las decisiones conectadas con el objetivo del negocio.",
+      "operations": "La comunicación puede continuar por WhatsApp y los pagos se coordinan por Yappy o transferencia, con acompañamiento directo durante el proyecto.",
+      "steps": {
+        "diagnosis": {
+          "title": "Diagnóstico",
+          "description": "Entendemos el problema, la operación actual y qué resultado necesita el negocio."
+        },
+        "strategy": {
+          "title": "Estrategia",
+          "description": "Definimos el alcance, las prioridades y la ruta más simple para avanzar."
+        },
+        "design": {
+          "title": "Diseño",
+          "description": "Organizamos contenidos y flujos para que la experiencia sea clara en cada pantalla."
+        },
+        "development": {
+          "title": "Desarrollo",
+          "description": "Construimos una base rápida, estructurada y preparada para crecer."
+        },
+        "launch": {
+          "title": "Lanzamiento",
+          "description": "Revisamos el funcionamiento, preparamos la salida y acompañamos la puesta en marcha."
+        },
+        "improvement": {
+          "title": "Mejora",
+          "description": "Observamos el uso real y priorizamos ajustes cuando aportan valor."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Por qué Fuentivo",
+      "title": "Tecnología pensada para el negocio que la usa.",
+      "description": "Combinamos criterio de producto, diseño y desarrollo para construir soluciones que encajen con la operación actual y puedan evolucionar con ella.",
+      "items": {
+        "fit": "Soluciones adaptadas al negocio, no procesos forzados por la herramienta.",
+        "simpleUx": "Experiencias simples para clientes y equipos sin formación técnica.",
+        "mobile": "Decisiones mobile-first para el contexto de uso real.",
+        "structured": "Desarrollo rápido con una estructura técnica mantenible.",
+        "regional": "Entendimiento de operaciones y hábitos digitales latinoamericanos.",
+        "direct": "Comunicación directa para resolver dudas y tomar decisiones.",
+        "scalable": "Una base técnica que permite añadir capacidades sin rehacer el producto."
+      }
+    },
+    "regional": {
+      "eyebrow": "Contexto operativo",
+      "title": "Diseñado alrededor de cómo ya trabaja tu equipo.",
+      "description": "En Panamá y Latinoamérica, muchas operaciones pasan por el teléfono, los chats y equipos pequeños. Diseñamos considerando esa realidad desde el inicio.",
+      "context": "WhatsApp, Yappy y los pagos locales pueden formar parte del flujo, pero la solución completa también organiza procesos, información y experiencias para que el negocio opere mejor.",
+      "items": {
+        "whatsapp": "WhatsApp",
+        "yappy": "Yappy",
+        "payments": "Pagos locales",
+        "processes": "Procesos actuales",
+        "smallTeams": "Equipos pequeños",
+        "mobileUse": "Uso móvil",
+        "onboarding": "Onboarding simple"
+      }
+    },
+    "finalCta": {
+      "eyebrow": "Hablemos",
+      "title": "¿Hay una parte de tu negocio que debería funcionar mejor?",
+      "description": "Cuéntanos qué está frenando a tu equipo y evaluemos una solución clara para avanzar.",
+      "primaryCta": "Solicitar diagnóstico",
+      "whatsapp": "Hablar por WhatsApp",
+      "whatsappMessage": "Hola, vi la web de Fuentivo. Quiero conversar sobre una parte de mi negocio que necesito mejorar."
+    }
   }
 }

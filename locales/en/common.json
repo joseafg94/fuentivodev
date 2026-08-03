@@ -29,5 +29,150 @@
       "privacy": "Privacy policy",
       "copyright": "Fuentivo. All rights reserved."
     }
+  },
+  "Home": {
+    "metadata": {
+      "title": "Fuentivo | Websites, business systems, and automation",
+      "description": "Fuentivo designs websites, business systems, and automations built around how companies in Panama and Latin America actually operate."
+    },
+    "hero": {
+      "eyebrow": "Digital product and solutions studio",
+      "title": "We build digital solutions that move your business forward.",
+      "description": "We design websites, business systems, and automations built around the way companies actually operate.",
+      "primaryCta": "Discuss your project",
+      "secondaryCta": "View projects",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappMessage": "Hi, I visited the Fuentivo website and would like to discuss what my business needs.",
+      "visual": {
+        "presence": "Digital presence",
+        "system": "Business system",
+        "automation": "Automation",
+        "connected": "One connected flow"
+      }
+    },
+    "problems": {
+      "eyebrow": "Problems we solve",
+      "title": "Technology should remove friction, not create more of it.",
+      "description": "We start with the business or operational problem, not a list of tools. These are common signs that a digital solution could help.",
+      "items": {
+        "contacts": "Your website gets traffic but does not generate inquiries.",
+        "presence": "Your digital presence does not reflect the quality of your business.",
+        "manual": "Manual processes consume valuable time every day.",
+        "scattered": "Information is scattered across WhatsApp and spreadsheets.",
+        "repetitive": "Your team repeats tasks that could be simplified.",
+        "complex": "Current systems are more complicated than they need to be.",
+        "rigid": "Your tools force the business to change how it operates."
+      }
+    },
+    "services": {
+      "eyebrow": "What we build",
+      "title": "Clear solutions for better operations and steady growth.",
+      "description": "Every project connects a specific need with a solution the team can use and maintain.",
+      "problemLabel": "Problem",
+      "outcomeLabel": "Outcome",
+      "link": "Explore services",
+      "items": {
+        "presence": {
+          "title": "Digital presence",
+          "problem": "The business does not clearly communicate its value or relies on channels it does not control.",
+          "outcome": "A professional presence that explains, builds confidence, and makes it easy to get in touch.",
+          "examples": "Company websites, landing pages, and restaurant websites."
+        },
+        "systems": {
+          "title": "Business systems",
+          "problem": "Important information and tasks are spread across files, chats, and manual processes.",
+          "outcome": "A more organized operation with the right information in one place.",
+          "examples": "Internal dashboards, portals, inventory, and operational tools."
+        },
+        "automation": {
+          "title": "Automation",
+          "problem": "The team spends time on repetitive tasks, follow-ups, and moving information between tools.",
+          "outcome": "Faster workflows that reduce manual work while keeping people in control.",
+          "examples": "Notifications, lead follow-up, and process integrations."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Selected work",
+      "title": "Projects that turn a real need into a useful tool.",
+      "description": "Products and solutions designed around real operations, without claiming results that have not been measured.",
+      "viewAll": "View all projects",
+      "viewProject": "View project",
+      "status": {
+        "published": "In production",
+        "in-progress": "In progress",
+        "concept": "Concept",
+        "archived": "Archived"
+      }
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "title": "A clear process from start to finish.",
+      "description": "Each stage reduces uncertainty and keeps decisions tied to the business goal.",
+      "operations": "Communication can continue through WhatsApp, and payments can be coordinated through Yappy or bank transfer, with direct guidance throughout the project.",
+      "steps": {
+        "diagnosis": {
+          "title": "Discovery",
+          "description": "We understand the problem, the current operation, and the outcome the business needs."
+        },
+        "strategy": {
+          "title": "Strategy",
+          "description": "We define the scope, priorities, and simplest path forward."
+        },
+        "design": {
+          "title": "Design",
+          "description": "We organize content and workflows so the experience is clear on every screen."
+        },
+        "development": {
+          "title": "Development",
+          "description": "We build a fast, structured foundation that is ready to grow."
+        },
+        "launch": {
+          "title": "Launch",
+          "description": "We verify the experience, prepare the release, and support the rollout."
+        },
+        "improvement": {
+          "title": "Improvement",
+          "description": "We learn from real use and prioritize updates when they add value."
+        }
+      }
+    },
+    "why": {
+      "eyebrow": "Why Fuentivo",
+      "title": "Technology designed for the business using it.",
+      "description": "We combine product thinking, design, and development to build solutions that fit current operations and can evolve with them.",
+      "items": {
+        "fit": "Solutions shaped around the business instead of forcing a tool-driven process.",
+        "simpleUx": "Simple experiences for customers and teams without technical training.",
+        "mobile": "Mobile-first decisions based on the real context of use.",
+        "structured": "Fast development supported by a maintainable technical structure.",
+        "regional": "An understanding of Latin American operations and digital habits.",
+        "direct": "Direct communication for resolving questions and making decisions.",
+        "scalable": "A technical foundation that can add capabilities without rebuilding the product."
+      }
+    },
+    "regional": {
+      "eyebrow": "Operational context",
+      "title": "Designed around how your team already works.",
+      "description": "Across Panama and Latin America, many operations run through phones, messaging, and small teams. We account for that reality from the start.",
+      "context": "WhatsApp, Yappy, and local payments can be part of the workflow, but the complete solution also organizes processes, information, and experiences so the business can operate better.",
+      "items": {
+        "whatsapp": "WhatsApp",
+        "yappy": "Yappy",
+        "payments": "Local payments",
+        "processes": "Current processes",
+        "smallTeams": "Small teams",
+        "mobileUse": "Mobile use",
+        "onboarding": "Simple onboarding"
+      }
+    },
+    "finalCta": {
+      "eyebrow": "Let's talk",
+      "title": "Is there a part of your business that should work better?",
+      "description": "Tell us what is slowing your team down, and let's evaluate a clear way forward.",
+      "primaryCta": "Discuss your project",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappMessage": "Hi, I visited the Fuentivo website. I'd like to discuss a part of my business that needs to work better."
+    }
   }
 }
