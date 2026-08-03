@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter, Sora } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
 import { routing } from "@/i18n/routing";
 
 import "../globals.css";
@@ -76,16 +78,27 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-  const messages = await getMessages();
+  const [messages, t] = await Promise.all([
+    getMessages(),
+    getTranslations({ locale, namespace: "Layout" }),
+  ]);
 
   return (
     <html
       lang={locale}
       className={`${sora.variable} ${inter.variable} ${geistMono.variable} dark`}
     >
-      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
+      <body className="flex min-h-screen flex-col bg-background font-sans text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <a
+            href="#main-content"
+            className="fixed left-4 top-4 z-[100] -translate-y-20 rounded-control bg-primary px-4 py-3 font-medium text-primary-foreground transition-transform focus:translate-y-0"
+          >
+            {t("skipToContent")}
+          </a>
+          <Header locale={locale} />
+          <div className="flex flex-1 flex-col">{children}</div>
+          <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
     </html>

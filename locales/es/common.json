@@ -1,1 +1,33 @@
-{}
+{
+  "Layout": {
+    "skipToContent": "Saltar al contenido",
+    "brandHomeLabel": "Fuentivo — Inicio",
+    "navigationLabel": "Navegación principal",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú",
+    "menuTitle": "Menú",
+    "languageLabel": "Cambiar idioma",
+    "whatsappLabel": "Hablar por WhatsApp",
+    "whatsappMessage": "Hola, vi la web de Fuentivo y me gustaría conversar sobre una solución digital para mi negocio.",
+    "nav": {
+      "home": "Inicio",
+      "services": "Servicios",
+      "projects": "Proyectos",
+      "websites": "Webs",
+      "about": "Sobre Fuentivo",
+      "contact": "Contacto"
+    },
+    "cta": "Solicitar diagnóstico",
+    "footer": {
+      "description": "Fuentivo diseña y construye páginas web, sistemas y automatizaciones para negocios que quieren operar mejor y avanzar más rápido.",
+      "navigation": "Navegación",
+      "services": "Servicios",
+      "contact": "Contacto",
+      "serviceWebsites": "Páginas web",
+      "serviceSystems": "Sistemas para negocios",
+      "serviceAutomation": "Automatizaciones",
+      "privacy": "Política de privacidad",
+      "copyright": "Fuentivo. Todos los derechos reservados."
+    }
+  }
+}

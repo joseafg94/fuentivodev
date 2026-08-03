@@ -10,5 +10,5 @@ export default async function HomePage({ params }: HomePageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <main className="min-h-screen" />;
+  return <main id="main-content" className="flex-1" tabIndex={-1} />;
 }

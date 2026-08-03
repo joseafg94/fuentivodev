@@ -1,1 +1,33 @@
-{}
+{
+  "Layout": {
+    "skipToContent": "Skip to content",
+    "brandHomeLabel": "Fuentivo — Home",
+    "navigationLabel": "Primary navigation",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "menuTitle": "Menu",
+    "languageLabel": "Change language",
+    "whatsappLabel": "Chat on WhatsApp",
+    "whatsappMessage": "Hi, I visited the Fuentivo website and would like to discuss a digital solution for my business.",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "projects": "Projects",
+      "websites": "Websites",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "cta": "Discuss your project",
+    "footer": {
+      "description": "Fuentivo designs and builds websites, business systems, and automations for companies that want to operate better and move faster.",
+      "navigation": "Navigation",
+      "services": "Services",
+      "contact": "Contact",
+      "serviceWebsites": "Websites",
+      "serviceSystems": "Business systems",
+      "serviceAutomation": "Automations",
+      "privacy": "Privacy policy",
+      "copyright": "Fuentivo. All rights reserved."
+    }
+  }
+}
