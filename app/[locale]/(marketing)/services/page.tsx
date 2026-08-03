@@ -4,11 +4,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { ServiceCard } from "@/components/sections/ServiceCard";
+import { StructuredData } from "@/components/seo/StructuredData";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { siteConfig } from "@/config/site";
 import type { Locale } from "@/i18n/routing";
-import { appRoutes } from "@/lib/routes";
-import { createLocalizedMetadata } from "@/lib/seo";
+import { appRoutes, getLocalizedPath } from "@/lib/routes";
+import { absoluteUrl, createLocalizedMetadata } from "@/lib/seo";
 
 type ServicesPageProps = {
   params: Promise<{ locale: Locale }>;
@@ -64,9 +66,26 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "ServicesPage" });
+  const servicesUrl = absoluteUrl(getLocalizedPath(locale, appRoutes.services));
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": serviceDefinitions.map(({ key }) => ({
+      "@type": "Service",
+      name: t(`services.${key}.title`),
+      description: t(`services.${key}.description`),
+      url: `${servicesUrl}#${key}`,
+      provider: {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: absoluteUrl(getLocalizedPath(locale, appRoutes.home)),
+      },
+    })),
+  };
 
   return (
-    <main id="main-content" className="flex-1" tabIndex={-1}>
+    <>
+      <StructuredData data={structuredData} />
+      <main id="main-content" className="flex-1" tabIndex={-1}>
       <section
         aria-labelledby="services-page-title"
         className="relative isolate overflow-hidden border-b border-border"
@@ -223,7 +242,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         </Container>
       </Section>
 
-      <ContactCTA
+        <ContactCTA
         headingId="services-cta-title"
         eyebrow={t("finalCta.eyebrow")}
         title={t("finalCta.title")}
@@ -231,7 +250,8 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         primaryCta={t("finalCta.primaryCta")}
         whatsapp={t("finalCta.whatsapp")}
         whatsappMessage={t("finalCta.whatsappMessage")}
-      />
-    </main>
+        />
+      </main>
+    </>
   );
 }

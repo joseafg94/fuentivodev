@@ -1,10 +1,9 @@
 import type { MetadataRoute } from "next";
 
 import { siteConfig } from "@/config/site";
-import { getPublicProjects } from "@/lib/projects";
-import { getPathname } from "@/i18n/navigation";
+import { getPublicProjects, shouldIndexProject } from "@/lib/projects";
 import { routing } from "@/i18n/routing";
-import { appRoutes, getProjectRoute } from "@/lib/routes";
+import { appRoutes, getLocalizedPath, getLocalizedProjectPath } from "@/lib/routes";
 
 const staticRoutes = [
   appRoutes.home,
@@ -13,6 +12,7 @@ const staticRoutes = [
   appRoutes.websites,
   appRoutes.about,
   appRoutes.contact,
+  appRoutes.privacy,
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -20,27 +20,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages = Object.fromEntries(
       routing.locales.map((locale) => [
         locale,
-        new URL(getPathname({ locale, href }), siteConfig.url).toString(),
+        new URL(getLocalizedPath(locale, href), siteConfig.url).toString(),
       ]),
     );
+    languages["x-default"] = new URL(
+      getLocalizedPath("es", href),
+      siteConfig.url,
+    ).toString();
 
     return routing.locales.map((locale) => ({
-      url: new URL(getPathname({ locale, href }), siteConfig.url).toString(),
+      url: new URL(getLocalizedPath(locale, href), siteConfig.url).toString(),
       alternates: { languages },
     }));
   });
 
-  const projects = getPublicProjects().flatMap((project) => {
-    const href = getProjectRoute(project.slug);
+  const projects = getPublicProjects().filter(shouldIndexProject).flatMap((project) => {
     const projectLanguages = Object.fromEntries(
       routing.locales.map((locale) => [
         locale,
-        new URL(getPathname({ locale, href }), siteConfig.url).toString(),
+        new URL(getLocalizedProjectPath(locale, project.slug), siteConfig.url).toString(),
       ]),
     );
+    projectLanguages["x-default"] = new URL(
+      getLocalizedProjectPath("es", project.slug),
+      siteConfig.url,
+    ).toString();
 
     return routing.locales.map((locale) => ({
-      url: new URL(getPathname({ locale, href }), siteConfig.url).toString(),
+      url: new URL(
+        getLocalizedProjectPath(locale, project.slug),
+        siteConfig.url,
+      ).toString(),
       alternates: { languages: projectLanguages },
     }));
   });

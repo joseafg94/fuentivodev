@@ -4,6 +4,11 @@ export const siteConfig = {
   name: "Fuentivo",
   url: new URL(process.env.NEXT_PUBLIC_SITE_URL || fallbackSiteUrl),
   themeColor: "#111317",
+  socialImage: {
+    path: "/opengraph-image",
+    width: 1200,
+    height: 630,
+  },
   contact: {
     email: "fuentivo@gmail.com",
     whatsappNumber: "50768564698",

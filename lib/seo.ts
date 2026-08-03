@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
+import { siteConfig } from "@/config/site";
 import type { Project } from "@/content/projects";
-import { getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { shouldIndexProject } from "@/lib/projects";
-import { getProjectRoute } from "@/lib/routes";
+import { getLocalizedPath, getLocalizedProjectPath } from "@/lib/routes";
 import type { AppRoute } from "@/lib/routes";
 
 type LocalizedMetadataOptions = {
@@ -20,7 +20,10 @@ export function createLocalizedMetadata({
   title,
   description,
 }: LocalizedMetadataOptions): Metadata {
-  const canonical = getPathname({ locale, href });
+  const canonical = absoluteUrl(getLocalizedPath(locale, href));
+  const image = absoluteUrl(`/${locale}${siteConfig.socialImage.path}`);
+  const spanishUrl = absoluteUrl(getLocalizedPath("es", href));
+  const englishUrl = absoluteUrl(getLocalizedPath("en", href));
 
   return {
     title,
@@ -28,10 +31,12 @@ export function createLocalizedMetadata({
     alternates: {
       canonical,
       languages: {
-        es: getPathname({ locale: "es", href }),
-        en: getPathname({ locale: "en", href }),
+        es: spanishUrl,
+        en: englishUrl,
+        "x-default": spanishUrl,
       },
     },
+    robots: { index: true, follow: true },
     openGraph: {
       type: "website",
       title,
@@ -39,6 +44,19 @@ export function createLocalizedMetadata({
       url: canonical,
       locale: locale === "es" ? "es_PA" : "en_US",
       alternateLocale: locale === "es" ? ["en_US"] : ["es_PA"],
+      siteName: siteConfig.name,
+      images: [{
+        url: image,
+        width: siteConfig.socialImage.width,
+        height: siteConfig.socialImage.height,
+        alt: siteConfig.name,
+      }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
     },
   };
 }
@@ -48,9 +66,10 @@ export function createProjectMetadata(
   locale: Locale,
 ): Metadata {
   const seo = project.seo[locale];
-  const href = getProjectRoute(project.slug);
-  const canonical = getPathname({ locale, href });
-  const image = seo.image ?? project.coverImage;
+  const canonical = absoluteUrl(getLocalizedProjectPath(locale, project.slug));
+  const spanishUrl = absoluteUrl(getLocalizedProjectPath("es", project.slug));
+  const englishUrl = absoluteUrl(getLocalizedProjectPath("en", project.slug));
+  const image = absoluteUrl(seo.image ?? project.coverImage);
   const shouldIndex = shouldIndexProject(project);
 
   return {
@@ -59,8 +78,9 @@ export function createProjectMetadata(
     alternates: {
       canonical,
       languages: {
-        es: getPathname({ locale: "es", href }),
-        en: getPathname({ locale: "en", href }),
+        es: spanishUrl,
+        en: englishUrl,
+        "x-default": spanishUrl,
       },
     },
     robots: {
@@ -76,5 +96,15 @@ export function createProjectMetadata(
       locale: locale === "es" ? "es_PA" : "en_US",
       alternateLocale: locale === "es" ? ["en_US"] : ["es_PA"],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description,
+      images: [image],
+    },
   };
+}
+
+export function absoluteUrl(pathname: string) {
+  return new URL(pathname, siteConfig.url).toString();
 }

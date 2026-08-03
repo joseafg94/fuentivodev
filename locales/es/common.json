@@ -597,6 +597,47 @@
       "link": "Consulta la política de privacidad."
     }
   },
+  "PrivacyPage": {
+    "metadata": {
+      "title": "Política de privacidad | Fuentivo",
+      "description": "Cómo Fuentivo recopila, utiliza y protege los datos enviados mediante su formulario de contacto."
+    },
+    "eyebrow": "Privacidad",
+    "title": "Política de privacidad",
+    "intro": "Esta política describe el tratamiento real de la información que compartes al contactar a Fuentivo mediante este sitio.",
+    "updated": "Última actualización: 3 de agosto de 2026.",
+    "sections": {
+      "collected": {
+        "title": "Datos que recopilamos",
+        "body": "El formulario solicita nombre, negocio o empresa, correo electrónico o número de WhatsApp, tipo de solución y mensaje. También procesa campos técnicos anti-spam, como un honeypot y el tiempo transcurrido antes del envío."
+      },
+      "purpose": {
+        "title": "Para qué se utilizan",
+        "body": "Usamos esos datos para responder la consulta, comprender el problema, evaluar si Fuentivo puede ayudar y dar seguimiento a la conversación solicitada. No se usan para vender listas de contactos ni para campañas publicitarias no solicitadas."
+      },
+      "delivery": {
+        "title": "Envío y almacenamiento",
+        "body": "El sitio valida la información en el servidor y la envía por correo mediante Resend al buzón de Fuentivo. La aplicación no guarda los mensajes en una base de datos propia, pero el correo puede permanecer en los sistemas de Resend y Google hasta que sea eliminado conforme a sus procesos y a la gestión del buzón. Todavía no se ha fijado un plazo interno de conservación."
+      },
+      "analytics": {
+        "title": "Analítica y cookies",
+        "body": "Actualmente el sitio no utiliza herramientas de analítica ni cookies analíticas o publicitarias. El proveedor de alojamiento puede generar registros técnicos necesarios para seguridad, estabilidad y diagnóstico. Esta política se actualizará antes de incorporar analítica o tecnologías similares."
+      },
+      "providers": {
+        "title": "Proveedores",
+        "body": "Vercel aloja y ejecuta el sitio; Resend procesa el envío del formulario; y Google recibe el mensaje en el buzón de Fuentivo. Cada proveedor trata datos técnicos o del mensaje según la función necesaria para prestar su servicio."
+      },
+      "requests": {
+        "title": "Solicitudes sobre tus datos",
+        "body": "Para consultar, corregir o solicitar la eliminación de un mensaje, escribe a fuentivo@gmail.com. Fuentivo responderá según la información disponible y las obligaciones que correspondan."
+      },
+      "pending": {
+        "title": "Nota antes de producción",
+        "body": "Antes del lanzamiento público deben confirmarse la identidad legal responsable del tratamiento y el plazo interno de conservación. Esta política no constituye una afirmación de cumplimiento legal absoluto."
+      }
+    },
+    "contact": "Contactar a Fuentivo"
+  },
   "NotFound": {
     "title": "Esta página no existe.",
     "description": "La dirección puede ser incorrecta o el contenido ya no está disponible. Puedes volver al inicio o explorar los proyectos públicos.",

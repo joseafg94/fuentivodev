@@ -7,10 +7,9 @@ import { StructuredData } from "@/components/seo/StructuredData";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/config/site";
-import { getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { appRoutes } from "@/lib/routes";
-import { createLocalizedMetadata } from "@/lib/seo";
+import { appRoutes, getLocalizedPath } from "@/lib/routes";
+import { absoluteUrl, createLocalizedMetadata } from "@/lib/seo";
 
 type AboutPageProps = {
   params: Promise<{ locale: Locale }>;
@@ -45,10 +44,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "AboutPage" });
-  const aboutUrl = new URL(
-    getPathname({ locale, href: appRoutes.about }),
-    siteConfig.url,
-  ).toString();
+  const aboutUrl = absoluteUrl(getLocalizedPath(locale, appRoutes.about));
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",

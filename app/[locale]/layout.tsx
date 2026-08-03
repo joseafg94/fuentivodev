@@ -8,6 +8,8 @@ import { siteConfig } from "@/config/site";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { routing } from "@/i18n/routing";
+import { appRoutes } from "@/lib/routes";
+import { createLocalizedMetadata } from "@/lib/seo";
 
 import "../globals.css";
 
@@ -54,16 +56,13 @@ export async function generateMetadata({
 
   return {
     metadataBase: siteConfig.url,
-    title: localizedMetadata.title,
-    description: localizedMetadata.description,
     manifest: "/manifest.webmanifest",
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        es: "/es",
-        en: "/en",
-      },
-    },
+    ...createLocalizedMetadata({
+      locale,
+      href: appRoutes.home,
+      title: localizedMetadata.title,
+      description: localizedMetadata.description,
+    }),
   };
 }
 

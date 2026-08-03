@@ -30,6 +30,19 @@ export function getProjectRoute(slug: string) {
   };
 }
 
+export function getLocalizedPath(locale: Locale, href: AppRoute) {
+  const pathname = localizedPathnames[href];
+  const localizedPath = typeof pathname === "string" ? pathname : pathname[locale];
+
+  return `/${locale}${localizedPath === "/" ? "" : localizedPath}`;
+}
+
+export function getLocalizedProjectPath(locale: Locale, slug: string) {
+  const pattern = localizedPathnames["/projects/[slug]"][locale];
+
+  return `/${locale}${pattern.replace("[slug]", encodeURIComponent(slug))}`;
+}
+
 export function isRouteActive(pathname: string, href: AppRoute) {
   if (href === appRoutes.home) {
     return pathname === href;
@@ -37,3 +50,5 @@ export function isRouteActive(pathname: string, href: AppRoute) {
 
   return pathname === href || pathname.startsWith(`${href}/`);
 }
+import { localizedPathnames } from "@/i18n/pathnames";
+import type { Locale } from "@/i18n/routing";

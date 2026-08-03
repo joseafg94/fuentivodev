@@ -6,11 +6,10 @@ import { notFound } from "next/navigation";
 import { ProjectCaseStudy } from "@/components/projects/ProjectCaseStudy";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { siteConfig } from "@/config/site";
-import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getProjectBySlug, getProjectStaticParams, getRelatedProjects } from "@/lib/projects";
-import { getProjectRoute } from "@/lib/routes";
-import { createProjectMetadata } from "@/lib/seo";
+import { appRoutes, getLocalizedPath, getLocalizedProjectPath } from "@/lib/routes";
+import { absoluteUrl, createProjectMetadata } from "@/lib/seo";
 
 type ProjectPageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -52,13 +51,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "ProjectDetail" });
   const relatedProjects = getRelatedProjects(project, 2);
-  const href = getProjectRoute(project.slug);
-  const projectUrl = new URL(getPathname({ locale, href }), siteConfig.url).toString();
-  const projectsUrl = new URL(
-    getPathname({ locale, href: "/projects" }),
-    siteConfig.url,
-  ).toString();
-  const homeUrl = new URL(`/${locale}`, siteConfig.url).toString();
+  const projectUrl = absoluteUrl(getLocalizedProjectPath(locale, project.slug));
+  const projectsUrl = absoluteUrl(getLocalizedPath(locale, appRoutes.projects));
+  const homeUrl = absoluteUrl(getLocalizedPath(locale, appRoutes.home));
   const imageUrl = new URL(
     project.seo[locale].image ?? project.coverImage,
     siteConfig.url,

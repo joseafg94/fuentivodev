@@ -597,6 +597,47 @@
       "link": "Read the privacy policy."
     }
   },
+  "PrivacyPage": {
+    "metadata": {
+      "title": "Privacy policy | Fuentivo",
+      "description": "How Fuentivo collects, uses, and protects information submitted through its contact form."
+    },
+    "eyebrow": "Privacy",
+    "title": "Privacy policy",
+    "intro": "This policy describes how information you share with Fuentivo through this website is actually handled.",
+    "updated": "Last updated: August 3, 2026.",
+    "sections": {
+      "collected": {
+        "title": "Information we collect",
+        "body": "The form asks for your name, business or company, email address or WhatsApp number, type of solution, and message. It also processes technical anti-spam fields, including a honeypot and the time elapsed before submission."
+      },
+      "purpose": {
+        "title": "How it is used",
+        "body": "We use this information to respond to your inquiry, understand the problem, evaluate whether Fuentivo can help, and follow up on the conversation you requested. It is not used to sell contact lists or send unsolicited advertising campaigns."
+      },
+      "delivery": {
+        "title": "Delivery and storage",
+        "body": "The website validates the information on the server and sends it through Resend to Fuentivo's inbox. The application does not store messages in its own database, but email may remain in Resend's and Google's systems until deleted under their processes and the management of the inbox. An internal retention period has not yet been established."
+      },
+      "analytics": {
+        "title": "Analytics and cookies",
+        "body": "The website currently uses no analytics tools or analytics or advertising cookies. The hosting provider may generate technical logs required for security, stability, and diagnostics. This policy will be updated before analytics or similar technologies are introduced."
+      },
+      "providers": {
+        "title": "Service providers",
+        "body": "Vercel hosts and runs the website; Resend processes form delivery; and Google receives the message in Fuentivo's inbox. Each provider processes technical or message data only for the function needed to deliver its service."
+      },
+      "requests": {
+        "title": "Requests about your information",
+        "body": "To access, correct, or request deletion of a message, email fuentivo@gmail.com. Fuentivo will respond based on the information available and any applicable obligations."
+      },
+      "pending": {
+        "title": "Pre-production note",
+        "body": "The legal identity responsible for data handling and the internal retention period must be confirmed before public launch. This policy is not a claim of absolute legal compliance."
+      }
+    },
+    "contact": "Contact Fuentivo"
+  },
   "NotFound": {
     "title": "This page does not exist.",
     "description": "The address may be incorrect or the content is no longer available. You can return home or explore the public projects.",
