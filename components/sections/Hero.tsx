@@ -43,7 +43,7 @@ export async function Hero({ locale }: HeroProps) {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg" className="h-12 px-5 text-base">
-              <Link href={appRoutes.contact}>
+              <Link href={appRoutes.contact} prefetch={false}>
                 {t("primaryCta")}
                 <ArrowRight aria-hidden="true" />
               </Link>

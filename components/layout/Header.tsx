@@ -44,7 +44,7 @@ export async function Header({ locale }: HeaderProps) {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Button asChild size="lg" className="h-11 bg-primary px-4 text-primary-foreground hover:bg-fuentivo-emerald-hover">
-            <Link href={appRoutes.contact}>{t("cta")}</Link>
+            <Link href={appRoutes.contact} prefetch={false}>{t("cta")}</Link>
           </Button>
           <LanguageSwitcher locale={locale} label={t("languageLabel")} />
         </div>

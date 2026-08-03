@@ -68,6 +68,7 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
 
           <Link
             href={appRoutes.contact}
+            prefetch={false}
             className="mt-12 inline-flex min-h-11 items-center rounded-control bg-primary px-5 py-3 font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             {t("contact")}

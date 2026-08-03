@@ -96,7 +96,7 @@ export function MobileNav({
 
             <div className="mt-auto grid gap-3 pt-8">
               <Button asChild size="lg" className="h-11 bg-primary px-4 text-primary-foreground hover:bg-fuentivo-emerald-hover">
-                <Link href={appRoutes.contact} onClick={closeMenu}>
+                <Link href={appRoutes.contact} prefetch={false} onClick={closeMenu}>
                   {ctaLabel}
                 </Link>
               </Button>

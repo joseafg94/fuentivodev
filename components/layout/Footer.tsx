@@ -46,7 +46,7 @@ export async function Footer({ locale }: FooterProps) {
           <ul className="mt-4 space-y-2">
             {mobileNavigation.map(({ key, href }) => (
               <li key={key}>
-                <Link className="inline-flex min-h-11 items-center text-sm text-fuentivo-secondary transition-colors hover:text-foreground" href={href}>
+                <Link className="inline-flex min-h-11 items-center text-sm text-fuentivo-secondary transition-colors hover:text-foreground" href={href} prefetch={href === appRoutes.contact ? false : undefined}>
                   {navLabels[key]}
                 </Link>
               </li>

@@ -2,7 +2,7 @@
 
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { isRouteActive, primaryNavigation } from "@/lib/routes";
+import { appRoutes, isRouteActive, primaryNavigation } from "@/lib/routes";
 
 export type NavigationLabels = Record<
   "home" | (typeof primaryNavigation)[number]["key"],
@@ -35,6 +35,7 @@ export function NavigationLinks({
           <Link
             key={key}
             href={href}
+            prefetch={href === appRoutes.contact ? false : undefined}
             aria-current={isActive ? "page" : undefined}
             onClick={onNavigate}
             className={cn(

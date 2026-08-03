@@ -110,6 +110,7 @@ export function ProjectCaseStudy({
                 alt={`${localized(project.title)} — ${localized(project.shortDescription)}`}
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="object-cover"
               />

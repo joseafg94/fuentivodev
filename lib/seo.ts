@@ -33,7 +33,7 @@ export function createLocalizedMetadata({
       languages: {
         es: spanishUrl,
         en: englishUrl,
-        "x-default": spanishUrl,
+        "x-default": absoluteUrl("/"),
       },
     },
     robots: { index: true, follow: true },
@@ -80,7 +80,7 @@ export function createProjectMetadata(
       languages: {
         es: spanishUrl,
         en: englishUrl,
-        "x-default": spanishUrl,
+        "x-default": absoluteUrl("/"),
       },
     },
     robots: {

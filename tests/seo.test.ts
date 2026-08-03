@@ -36,7 +36,7 @@ describe("localized SEO", () => {
     expect(String(metadata.alternates?.canonical)).toMatch(/\/es\/sobre-fuentivo$/);
     expect(languages.es).toMatch(/\/es\/sobre-fuentivo$/);
     expect(languages.en).toMatch(/\/en\/about$/);
-    expect(languages["x-default"]).toBe(languages.es);
+    expect(languages["x-default"]).toMatch(/^https?:\/\/[^/]+\/$/);
     expect(metadata.twitter).toMatchObject({ card: "summary_large_image" });
   });
 

@@ -23,10 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         new URL(getLocalizedPath(locale, href), siteConfig.url).toString(),
       ]),
     );
-    languages["x-default"] = new URL(
-      getLocalizedPath("es", href),
-      siteConfig.url,
-    ).toString();
+    languages["x-default"] = siteConfig.url.toString();
 
     return routing.locales.map((locale) => ({
       url: new URL(getLocalizedPath(locale, href), siteConfig.url).toString(),
@@ -41,10 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         new URL(getLocalizedProjectPath(locale, project.slug), siteConfig.url).toString(),
       ]),
     );
-    projectLanguages["x-default"] = new URL(
-      getLocalizedProjectPath("es", project.slug),
-      siteConfig.url,
-    ).toString();
+    projectLanguages["x-default"] = siteConfig.url.toString();
 
     return routing.locales.map((locale) => ({
       url: new URL(
