@@ -174,5 +174,153 @@
       "whatsapp": "Chat on WhatsApp",
       "whatsappMessage": "Hi, I visited the Fuentivo website. I'd like to discuss a part of my business that needs to work better."
     }
+  },
+  "ServicesPage": {
+    "metadata": {
+      "title": "Digital services for businesses | Fuentivo",
+      "description": "Websites, business systems, and automations designed around how companies in Panama and Latin America actually operate."
+    },
+    "intro": {
+      "eyebrow": "Services",
+      "title": "Digital solutions shaped around your business.",
+      "description": "We do not sell generic packages. Each solution is defined by the problem, the right scope, and the current stage of the business.",
+      "pricing": "That is why we do not publish fixed prices: first, we determine what needs to be solved and the level of work involved."
+    },
+    "lines": {
+      "eyebrow": "Three areas of work",
+      "title": "From clearer communication to better operational control.",
+      "description": "We can solve a focused need or connect several capabilities within one solution."
+    },
+    "labels": {
+      "problems": "Common problems",
+      "solutions": "Possible solutions",
+      "result": "Intended outcome"
+    },
+    "services": {
+      "presence": {
+        "title": "Digital presence",
+        "description": "We design a clear, professional, and useful presence so people understand the business and know what to do next.",
+        "problems": {
+          "noWebsite": "The business does not have a website yet.",
+          "outdated": "The current website is out of date.",
+          "mobile": "The mobile experience makes browsing or contacting difficult.",
+          "information": "Important information is hard to find.",
+          "conversions": "Traffic produces few inquiries or opportunities.",
+          "socialOnly": "The entire digital presence depends on social media."
+        },
+        "solutions": {
+          "landing": "Landing pages",
+          "corporate": "Company websites",
+          "serviceWebsites": "Service websites",
+          "portfolios": "Portfolios",
+          "catalogs": "Catalogs",
+          "restaurants": "Restaurant websites",
+          "redesigns": "Redesigns",
+          "forms": "Forms",
+          "whatsapp": "WhatsApp contact",
+          "seo": "Technical and local SEO"
+        },
+        "result": "Greater clarity and credibility, a strong mobile experience, easier contact, and more business opportunities."
+      },
+      "systems": {
+        "title": "Business systems",
+        "description": "We turn scattered or hard-to-control processes into tools focused on day-to-day operations.",
+        "problems": {
+          "spreadsheets": "Important processes depend on spreadsheets.",
+          "scattered": "Information is spread across several places.",
+          "quotes": "Quotes are prepared manually.",
+          "chatTracking": "Follow-up happens inside chat threads.",
+          "control": "Tasks are difficult to assign and track.",
+          "genericTools": "Generic tools do not fit the process."
+        },
+        "solutions": {
+          "adminPanels": "Admin dashboards",
+          "quoters": "Quoting tools",
+          "portals": "Portals",
+          "orders": "Order management",
+          "bookings": "Booking systems",
+          "dashboards": "Dashboards",
+          "internalTools": "Internal tools",
+          "webApps": "Web applications",
+          "mvps": "MVPs"
+        },
+        "result": "Save time, reduce errors, centralize information, and gain greater control over operations."
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "We connect repetitive steps so information can move forward without unnecessary manual handoffs.",
+        "problems": {
+          "manualFollowup": "Follow-up depends on manual reminders.",
+          "repeatedAnswers": "The team answers the same questions repeatedly.",
+          "manualTransfer": "Information is copied by hand between tools.",
+          "missedNotifications": "Important notifications are forgotten.",
+          "repeatedDocuments": "The same documents are prepared over and over."
+        },
+        "solutions": {
+          "connectedForms": "Connected forms",
+          "notifications": "Notifications",
+          "followup": "Follow-up workflows",
+          "documents": "Document generation",
+          "leadClassification": "Lead classification",
+          "responses": "Response automation",
+          "integrations": "Platform integrations",
+          "whatsappAutomation": "WhatsApp automation and chatbots"
+        },
+        "result": "Fewer repetitive tasks, more consistent responses, and processes that keep human oversight where it matters.",
+        "whatsapp": {
+          "contactTitle": "WhatsApp for contacting Fuentivo",
+          "contactDescription": "It is a direct way to discuss your project with us, just like email or the contact page.",
+          "solutionTitle": "WhatsApp within a client solution",
+          "solutionDescription": "It can serve as a notification, support, or automation channel when the use case calls for it. Any integration or use of the WhatsApp Business API is defined only after reviewing requirements, feasibility, and scope; it is never assumed."
+        }
+      }
+    },
+    "definition": {
+      "eyebrow": "How a solution is defined",
+      "title": "First, we understand the context. Then we define what to build.",
+      "description": "These criteria help us prioritize a useful solution today without limiting future growth.",
+      "criteria": {
+        "problem": {
+          "title": "Problem",
+          "description": "The operational or commercial friction that needs to be solved."
+        },
+        "users": {
+          "title": "Users",
+          "description": "Who will use the solution and in what context."
+        },
+        "currentProcess": {
+          "title": "Current process",
+          "description": "How the work happens today and where it slows down."
+        },
+        "existingTools": {
+          "title": "Existing tools",
+          "description": "What should be kept, connected, or replaced."
+        },
+        "priorities": {
+          "title": "Priorities",
+          "description": "What needs to create value first."
+        },
+        "scope": {
+          "title": "Scope",
+          "description": "What the first version includes and leaves out."
+        },
+        "maintenance": {
+          "title": "Maintenance",
+          "description": "Who will update content, data, and processes."
+        },
+        "futureGrowth": {
+          "title": "Future growth",
+          "description": "Which capabilities may be added later."
+        }
+      }
+    },
+    "finalCta": {
+      "eyebrow": "Define the next step",
+      "title": "What does your business need to solve right now?",
+      "description": "Let's discuss the problem, the current process, and a focused first version with a clear scope.",
+      "primaryCta": "Discuss your project",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappMessage": "Hi, I reviewed Fuentivo's services and would like to discuss a solution for my business."
+    }
   }
 }

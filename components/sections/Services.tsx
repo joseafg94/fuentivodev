@@ -7,6 +7,8 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { appRoutes } from "@/lib/routes";
 
+import { ServiceCard } from "./ServiceCard";
+
 type ServicesProps = {
   locale: Locale;
 };
@@ -37,19 +39,12 @@ export async function Services({ locale }: ServicesProps) {
 
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {services.map(({ key, icon: Icon }, index) => (
-            <article
+            <ServiceCard
               key={key}
-              className="group flex min-h-full flex-col rounded-card-large border border-border bg-background p-6 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-primary/45 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-7"
+              icon={Icon}
+              index={`0${index + 1}`}
+              title={t(`items.${key}.title`)}
             >
-              <div className="flex items-center justify-between">
-                <span className="grid size-11 place-items-center rounded-control border border-primary/25 bg-primary/10 text-primary">
-                  <Icon aria-hidden="true" className="size-5" />
-                </span>
-                <span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>
-              </div>
-              <h3 className="mt-8 text-2xl font-semibold tracking-[-0.04em]">
-                {t(`items.${key}.title`)}
-              </h3>
               <p className="mt-5 text-sm font-medium uppercase tracking-[0.08em] text-muted-foreground">
                 {t("problemLabel")}
               </p>
@@ -75,7 +70,7 @@ export async function Services({ locale }: ServicesProps) {
                   className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
                 />
               </Link>
-            </article>
+            </ServiceCard>
           ))}
         </div>
       </Container>

@@ -9,9 +9,9 @@ import { Process } from "@/components/sections/Process";
 import { RegionalAdaptation } from "@/components/sections/RegionalAdaptation";
 import { Services } from "@/components/sections/Services";
 import { WhyFuentivo } from "@/components/sections/WhyFuentivo";
-import { getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { appRoutes } from "@/lib/routes";
+import { createLocalizedMetadata } from "@/lib/seo";
 
 type HomePageProps = {
   params: Promise<{ locale: Locale }>;
@@ -22,27 +22,13 @@ export async function generateMetadata({
 }: HomePageProps): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Home.metadata" });
-  const canonical = getPathname({ locale, href: appRoutes.home });
 
-  return {
+  return createLocalizedMetadata({
+    locale,
+    href: appRoutes.home,
     title: t("title"),
     description: t("description"),
-    alternates: {
-      canonical,
-      languages: {
-        es: getPathname({ locale: "es", href: appRoutes.home }),
-        en: getPathname({ locale: "en", href: appRoutes.home }),
-      },
-    },
-    openGraph: {
-      type: "website",
-      title: t("title"),
-      description: t("description"),
-      url: canonical,
-      locale: locale === "es" ? "es_PA" : "en_US",
-      alternateLocale: locale === "es" ? ["en_US"] : ["es_PA"],
-    },
-  };
+  });
 }
 
 export default async function HomePage({ params }: HomePageProps) {
