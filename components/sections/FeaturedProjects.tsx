@@ -14,7 +14,10 @@ type FeaturedProjectsProps = {
 };
 
 export async function FeaturedProjects({ locale }: FeaturedProjectsProps) {
-  const t = await getTranslations({ locale, namespace: "Home.featured" });
+  const [t, projectT] = await Promise.all([
+    getTranslations({ locale, namespace: "Home.featured" }),
+    getTranslations({ locale, namespace: "Projects" }),
+  ]);
   const projects = getFeaturedProjects();
 
   if (projects.length === 0) {
@@ -51,8 +54,10 @@ export async function FeaturedProjects({ locale }: FeaturedProjectsProps) {
               key={project.slug}
               project={project}
               locale={locale}
-              statusLabel={t(`status.${project.status}`)}
-              viewProjectLabel={t("viewProject")}
+              categoryLabel={projectT(`category.${project.category}`)}
+              statusLabel={projectT(`status.${project.status}`)}
+              viewProjectLabel={projectT("viewProject")}
+              liveProjectLabel={projectT("liveProject")}
             />
           ))}
         </div>

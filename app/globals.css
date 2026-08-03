@@ -178,6 +178,15 @@
   animation: hero-flow 5s ease-in-out infinite;
 }
 
+[data-active-project-filter="web"] [data-project-category]:not([data-project-category="web"]),
+[data-active-project-filter="system"] [data-project-category]:not([data-project-category="system"]),
+[data-active-project-filter="application"] [data-project-category]:not([data-project-category="application"]),
+[data-active-project-filter="automation"] [data-project-category]:not([data-project-category="automation"]),
+[data-active-project-filter="product"] [data-project-category]:not([data-project-category="product"]),
+[data-active-project-filter="experiment"] [data-project-category]:not([data-project-category="experiment"]) {
+  display: none;
+}
+
 @keyframes section-enter {
   from {
     opacity: 0.72;

@@ -96,14 +96,7 @@
       "eyebrow": "Selected work",
       "title": "Projects that turn a real need into a useful tool.",
       "description": "Products and solutions designed around real operations, without claiming results that have not been measured.",
-      "viewAll": "View all projects",
-      "viewProject": "View project",
-      "status": {
-        "published": "In production",
-        "in-progress": "In progress",
-        "concept": "Concept",
-        "archived": "Archived"
-      }
+      "viewAll": "View all projects"
     },
     "process": {
       "eyebrow": "How we work",
@@ -321,6 +314,75 @@
       "primaryCta": "Discuss your project",
       "whatsapp": "Chat on WhatsApp",
       "whatsappMessage": "Hi, I reviewed Fuentivo's services and would like to discuss a solution for my business."
+    }
+  },
+  "Projects": {
+    "viewProject": "View case study",
+    "liveProject": "View live site",
+    "category": {
+      "web": "Website",
+      "system": "System",
+      "application": "Application",
+      "automation": "Automation",
+      "product": "Product",
+      "experiment": "Experiment"
+    },
+    "status": {
+      "published": "In production",
+      "in-progress": "In progress",
+      "concept": "Concept",
+      "archived": "Archived"
+    }
+  },
+  "ProjectsPage": {
+    "metadata": {
+      "title": "Digital projects and products | Fuentivo",
+      "description": "Explore Fuentivo projects across websites, business systems, applications, automations, and digital products."
+    },
+    "intro": {
+      "eyebrow": "Projects",
+      "title": "Solutions built around real needs.",
+      "description": "A selection of websites, systems, applications, automations, and original products designed with an operational purpose."
+    },
+    "catalog": {
+      "title": "Explore the catalog.",
+      "description": "Filter by project type while keeping the available context and real project status visible."
+    },
+    "filterLabel": "Filter projects by category",
+    "resultsLabel": "projects shown",
+    "filters": {
+      "all": "All",
+      "web": "Websites",
+      "system": "Systems",
+      "application": "Applications",
+      "automation": "Automations",
+      "product": "Products",
+      "experiment": "Experiments"
+    },
+    "empty": {
+      "allTitle": "No public projects are available.",
+      "allDescription": "The catalog only shows projects with real information and an approved public status.",
+      "filterTitle": "No projects match this category.",
+      "filterDescription": "Choose another category to view the public projects currently available."
+    }
+  },
+  "WebsitesPage": {
+    "metadata": {
+      "title": "Websites designed by Fuentivo",
+      "description": "A focused view of websites created by Fuentivo, derived from the public project catalog."
+    },
+    "intro": {
+      "eyebrow": "Websites",
+      "title": "Websites designed to communicate clearly and convert better.",
+      "description": "This view brings together digital presence projects: company websites, service websites, landing pages, catalogs, and restaurant experiences."
+    },
+    "catalog": {
+      "title": "Website projects.",
+      "description": "Only work classified as a website in Fuentivo's public catalog appears here."
+    },
+    "empty": {
+      "title": "No websites have been published yet.",
+      "description": "This view will remain empty until a real, complete website project is approved for publication."
     }
   }
 }

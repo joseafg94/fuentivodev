@@ -96,14 +96,7 @@
       "eyebrow": "Trabajo seleccionado",
       "title": "Proyectos que convierten una necesidad en una herramienta útil.",
       "description": "Productos y soluciones diseñados alrededor de operaciones reales, sin atribuir resultados que todavía no han sido medidos.",
-      "viewAll": "Ver todos los proyectos",
-      "viewProject": "Ver proyecto",
-      "status": {
-        "published": "En producción",
-        "in-progress": "En desarrollo",
-        "concept": "Concepto",
-        "archived": "Archivado"
-      }
+      "viewAll": "Ver todos los proyectos"
     },
     "process": {
       "eyebrow": "Cómo trabajamos",
@@ -321,6 +314,75 @@
       "primaryCta": "Solicitar diagnóstico",
       "whatsapp": "Hablar por WhatsApp",
       "whatsappMessage": "Hola, vi los servicios de Fuentivo y quiero conversar sobre una solución para mi negocio."
+    }
+  },
+  "Projects": {
+    "viewProject": "Ver caso de estudio",
+    "liveProject": "Ver sitio",
+    "category": {
+      "web": "Web",
+      "system": "Sistema",
+      "application": "Aplicación",
+      "automation": "Automatización",
+      "product": "Producto",
+      "experiment": "Experimento"
+    },
+    "status": {
+      "published": "En producción",
+      "in-progress": "En desarrollo",
+      "concept": "Concepto",
+      "archived": "Archivado"
+    }
+  },
+  "ProjectsPage": {
+    "metadata": {
+      "title": "Proyectos digitales y productos | Fuentivo",
+      "description": "Explora proyectos de Fuentivo en páginas web, sistemas, aplicaciones, automatizaciones y productos digitales."
+    },
+    "intro": {
+      "eyebrow": "Proyectos",
+      "title": "Soluciones construidas alrededor de necesidades reales.",
+      "description": "Una selección de páginas web, sistemas, aplicaciones, automatizaciones y productos propios diseñados con propósito operativo."
+    },
+    "catalog": {
+      "title": "Explora el catálogo.",
+      "description": "Filtra por tipo de proyecto sin perder el contexto, el estado real ni la información disponible."
+    },
+    "filterLabel": "Filtrar proyectos por categoría",
+    "resultsLabel": "proyectos visibles",
+    "filters": {
+      "all": "Todos",
+      "web": "Webs",
+      "system": "Sistemas",
+      "application": "Aplicaciones",
+      "automation": "Automatizaciones",
+      "product": "Productos",
+      "experiment": "Experimentos"
+    },
+    "empty": {
+      "allTitle": "No hay proyectos públicos disponibles.",
+      "allDescription": "El catálogo solo muestra proyectos con información real y un estado público aprobado.",
+      "filterTitle": "No hay proyectos en esta categoría.",
+      "filterDescription": "Prueba otra categoría para ver los proyectos públicos disponibles."
+    }
+  },
+  "WebsitesPage": {
+    "metadata": {
+      "title": "Páginas web diseñadas por Fuentivo",
+      "description": "Vista especializada de páginas web creadas por Fuentivo, derivada del catálogo público de proyectos."
+    },
+    "intro": {
+      "eyebrow": "Webs",
+      "title": "Páginas web pensadas para comunicar y convertir mejor.",
+      "description": "Esta vista reúne proyectos de presencia digital: sitios corporativos, webs de servicios, landing pages, catálogos y experiencias para restaurantes."
+    },
+    "catalog": {
+      "title": "Proyectos web.",
+      "description": "Solo aparecen trabajos clasificados como web dentro del catálogo público de Fuentivo."
+    },
+    "empty": {
+      "title": "Aún no hay webs publicadas.",
+      "description": "Esta vista permanecerá vacía hasta que exista un proyecto web real, completo y aprobado para publicación."
     }
   }
 }
