@@ -66,7 +66,7 @@ export async function Hero({ locale }: HeroProps) {
 
         <div
           aria-hidden="true"
-          className="hero-system relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-card-large border border-primary/20 bg-surface/65 shadow-[0_32px_120px_-48px_rgba(0,184,106,0.6)] backdrop-blur-sm"
+          className="hero-system relative mx-auto hidden aspect-[4/3] w-full max-w-xl overflow-hidden rounded-card-large border border-primary/20 bg-surface/65 shadow-[0_32px_120px_-48px_rgba(0,184,106,0.6)] backdrop-blur-sm sm:block"
         >
           <div className="hero-grid absolute inset-0 opacity-60" />
           <div className="absolute inset-x-[14%] top-1/2 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />

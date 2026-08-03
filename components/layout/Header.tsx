@@ -32,7 +32,7 @@ export async function Header({ locale }: HeaderProps) {
     <header
       id="site-header"
       data-scrolled="false"
-      className="sticky top-0 z-50 h-16 border-b border-transparent bg-background/20 transition-[background-color,border-color,backdrop-filter] duration-200 data-[scrolled=true]:border-border/80 data-[scrolled=true]:bg-background/85 data-[scrolled=true]:backdrop-blur-xl"
+      className="sticky top-0 z-50 h-16 border-b border-transparent bg-background/20 transition-[background-color,border-color,backdrop-filter] duration-200 motion-reduce:transition-none data-[scrolled=true]:border-border/80 data-[scrolled=true]:bg-background/90 data-[scrolled=true]:backdrop-blur-md lg:data-[scrolled=true]:bg-background/85 lg:data-[scrolled=true]:backdrop-blur-xl"
     >
       <HeaderScrollState />
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-4 md:px-6">

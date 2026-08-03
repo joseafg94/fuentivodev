@@ -68,10 +68,10 @@ export function MobileNav({
         </DialogPrimitive.Trigger>
 
         <DialogPrimitive.Portal>
-          <DialogPrimitive.Overlay className="fixed inset-0 z-[60] bg-background/80 backdrop-blur-sm data-[state=closed]:opacity-0 data-[state=open]:opacity-100" />
+          <DialogPrimitive.Overlay className="fixed inset-0 z-[60] bg-background/80 transition-opacity duration-200 motion-reduce:transition-none data-[state=closed]:opacity-0 data-[state=open]:opacity-100 sm:backdrop-blur-sm" />
           <DialogPrimitive.Content
             aria-describedby={undefined}
-            className="fixed inset-y-0 right-0 z-[61] flex w-[min(90vw,24rem)] flex-col border-l border-border bg-surface p-6 shadow-2xl focus:outline-none"
+            className="fixed inset-y-0 right-0 z-[61] flex w-[min(90vw,24rem)] flex-col border-l border-border bg-surface p-6 shadow-xl focus:outline-none"
           >
             <div className="flex h-11 items-center justify-between">
               <DialogPrimitive.Title className="font-heading text-lg font-semibold">

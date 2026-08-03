@@ -26,14 +26,14 @@ export function ProjectCard({
   const projectHref = getProjectRoute(project.slug);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-card-large border border-border bg-card transition-[border-color,transform,box-shadow] duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_24px_80px_-40px_rgba(0,184,106,0.5)] motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+    <article className="motion-card group flex h-full flex-col overflow-hidden rounded-card-large border border-border bg-card transition-[border-color,transform,box-shadow] duration-200 ease-out motion-reduce:transition-none">
       <Link href={projectHref} className="relative block aspect-[16/9] overflow-hidden border-b border-border bg-background">
         <Image
           src={project.thumbnailImage}
           alt={`${project.title[locale]} — ${project.shortDescription[locale]}`}
           fill
           sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          className="motion-card-image object-cover transition-transform duration-300 ease-out motion-reduce:transition-none"
         />
         <span className="absolute left-4 top-4 rounded-full border border-primary/30 bg-background/85 px-3 py-1 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-primary backdrop-blur-md">
           {statusLabel}
@@ -78,7 +78,7 @@ export function ProjectCard({
             {viewProjectLabel}
             <ArrowUpRight
               aria-hidden="true"
-              className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+              className="motion-card-icon size-4 transition-transform duration-200 ease-out motion-reduce:transition-none"
             />
           </Link>
           {project.liveUrl ? (

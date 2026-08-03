@@ -20,7 +20,7 @@ export function ServiceCard({
   return (
     <article
       className={cn(
-        "group flex min-h-full flex-col rounded-card-large border border-border bg-background p-6 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-primary/45 motion-reduce:transition-none motion-reduce:hover:translate-y-0 sm:p-7",
+        "motion-card group flex min-h-full flex-col rounded-card-large border border-border bg-background p-6 transition-[border-color,transform,box-shadow] duration-200 ease-out motion-reduce:transition-none sm:p-7",
         className,
       )}
       {...props}

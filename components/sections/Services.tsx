@@ -67,7 +67,7 @@ export async function Services({ locale }: ServicesProps) {
                 {t("link")}
                 <ArrowUpRight
                   aria-hidden="true"
-                  className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none"
+                  className="motion-card-icon size-4 transition-transform duration-200 ease-out motion-reduce:transition-none"
                 />
               </Link>
             </ServiceCard>

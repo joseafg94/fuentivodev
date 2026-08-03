@@ -137,7 +137,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                 icon={icon}
                 index={`0${index + 1}`}
                 title={t(`services.${key}.title`)}
-                className="hover:translate-y-0 sm:p-8 lg:p-10"
+                className="motion-card-static sm:p-8 lg:p-10"
               >
                 <p className="mt-4 max-w-3xl text-base leading-7 text-fuentivo-secondary">
                   {t(`services.${key}.description`)}

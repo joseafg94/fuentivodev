@@ -48,7 +48,7 @@ export function ProjectFilters({
               aria-pressed={isActive}
               onClick={() => setActiveFilter(filter.value)}
               className={cn(
-                "inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-sm font-medium transition-colors",
+                "inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-sm font-medium transition-[color,background-color,border-color,transform] duration-200 ease-out active:translate-y-px motion-reduce:transition-none motion-reduce:active:translate-y-0",
                 isActive
                   ? "border-primary bg-primary text-primary-foreground"
                   : "border-border bg-card text-fuentivo-secondary hover:border-primary/45 hover:text-foreground",
