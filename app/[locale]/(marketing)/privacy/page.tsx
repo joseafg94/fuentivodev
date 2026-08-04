@@ -42,7 +42,7 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
 
   return (
     <main id="main-content" className="flex-1" tabIndex={-1}>
-      <Container className="py-20 sm:py-24 lg:py-32">
+      <Container className="pb-20 pt-24 sm:pb-24 sm:pt-28 lg:pb-32 lg:pt-36">
         <article className="max-w-3xl">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
             {t("eyebrow")}

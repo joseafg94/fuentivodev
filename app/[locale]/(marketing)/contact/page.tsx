@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { ContactForm } from "@/components/contact/ContactForm";
+import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/config/site";
@@ -38,17 +39,13 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
   return (
     <main id="main-content" className="flex-1" tabIndex={-1}>
-      <section aria-labelledby="contact-page-title" className="relative isolate overflow-hidden border-b border-border">
-        <div aria-hidden="true" className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_18%,rgba(0,184,106,0.16),transparent_30%)]" />
-        <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 opacity-35" />
-        <Container className="py-20 sm:py-24 lg:py-32">
-          <div className="max-w-4xl">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">{t("intro.eyebrow")}</p>
-            <h1 id="contact-page-title" className="mt-5 text-balance text-[clamp(2.75rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.065em]">{t("intro.title")}</h1>
-            <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-fuentivo-secondary sm:text-lg sm:leading-8">{t("intro.description")}</p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        headingId="contact-page-title"
+        eyebrow={t("intro.eyebrow")}
+        title={t("intro.title")}
+        description={t("intro.description")}
+        variant="contact"
+      />
 
       <Section aria-labelledby="contact-form-title" className="section-reveal">
         <Container>
@@ -63,7 +60,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
             </div>
 
             <aside aria-label={t("alternatives.label")} className="space-y-5 lg:pt-20">
-              <div className="rounded-card-large border border-border bg-card p-6">
+              <div className="motion-card rounded-card-large border border-border bg-card p-6 transition-[border-color,transform,box-shadow] duration-200 ease-out motion-reduce:transition-none">
                 <h2 className="text-xl font-semibold tracking-[-0.035em]">{t("alternatives.title")}</h2>
                 <p className="mt-3 text-sm leading-6 text-fuentivo-secondary">{t("alternatives.description")}</p>
                 <div className="mt-6 space-y-3">
@@ -78,7 +75,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 </div>
               </div>
 
-              <div className="rounded-card border border-border bg-surface/50 p-5">
+              <div className="motion-card rounded-card border border-border bg-surface/50 p-5 transition-[border-color,transform,box-shadow] duration-200 ease-out motion-reduce:transition-none">
                 <h2 className="font-heading text-base font-semibold">{t("payments.title")}</h2>
                 <p className="mt-2 text-sm leading-6 text-fuentivo-secondary">{t("payments.description")}</p>
               </div>

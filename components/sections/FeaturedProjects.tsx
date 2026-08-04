@@ -58,6 +58,7 @@ export async function FeaturedProjects({ locale }: FeaturedProjectsProps) {
               statusLabel={projectT(`status.${project.status}`)}
               viewProjectLabel={projectT("viewProject")}
               liveProjectLabel={projectT("liveProject")}
+              imageSizes="(min-width: 1280px) 1024px, (min-width: 768px) calc(100vw - 3rem), calc(100vw - 2rem)"
             />
           ))}
         </div>

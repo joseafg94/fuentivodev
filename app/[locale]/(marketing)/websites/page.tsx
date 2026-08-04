@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { EmptyProjects } from "@/components/projects/EmptyProjects";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
+import { PageHero } from "@/components/sections/PageHero";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import type { Locale } from "@/i18n/routing";
@@ -36,32 +37,13 @@ export default async function WebsitesPage({ params }: WebsitesPageProps) {
 
   return (
     <main id="main-content" className="flex-1" tabIndex={-1}>
-      <section
-        aria-labelledby="websites-page-title"
-        className="relative isolate overflow-hidden border-b border-border"
-      >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_18%,rgba(0,184,106,0.16),transparent_30%)]"
-        />
-        <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 opacity-35" />
-        <Container className="py-20 sm:py-24 lg:py-32">
-          <div className="max-w-4xl">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">
-              {t("intro.eyebrow")}
-            </p>
-            <h1
-              id="websites-page-title"
-              className="mt-5 text-balance text-[clamp(2.75rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.065em]"
-            >
-              {t("intro.title")}
-            </h1>
-            <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-fuentivo-secondary sm:text-lg sm:leading-8">
-              {t("intro.description")}
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        headingId="websites-page-title"
+        eyebrow={t("intro.eyebrow")}
+        title={t("intro.title")}
+        description={t("intro.description")}
+        variant="websites"
+      />
 
       <Section aria-labelledby="websites-catalog-title" className="section-reveal">
         <Container>

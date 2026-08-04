@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Link } from "@/i18n/navigation";
 import { appRoutes } from "@/lib/routes";
 
@@ -12,9 +14,13 @@ export function Logo({ label }: LogoProps) {
       aria-label={label}
       className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-control font-heading text-lg font-semibold tracking-[-0.03em] text-foreground"
     >
-      <span
+      <Image
+        src="/icon.svg"
+        alt=""
+        width={28}
+        height={28}
         aria-hidden="true"
-        className="size-3 rotate-45 rounded-[2px] border border-primary bg-primary/15"
+        className="size-6 object-contain"
       />
       Fuentivo
     </Link>

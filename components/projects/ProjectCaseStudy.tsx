@@ -78,7 +78,7 @@ export function ProjectCaseStudy({
       <section aria-labelledby="project-title" className="relative isolate overflow-hidden border-b border-border">
         <div aria-hidden="true" className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_18%,rgba(0,184,106,0.16),transparent_30%)]" />
         <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 opacity-35" />
-        <Container className="py-10 sm:py-14 lg:py-20">
+        <Container className="pb-16 pt-20 sm:pb-20 sm:pt-24 lg:pb-24 lg:pt-28">
           <nav aria-label="Breadcrumb" className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-2">
               <li><Link href={appRoutes.home} className="rounded-control hover:text-primary">{labels.breadcrumbHome}</Link></li>

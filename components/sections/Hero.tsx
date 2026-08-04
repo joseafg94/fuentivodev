@@ -26,22 +26,22 @@ export async function Hero({ locale }: HeroProps) {
       />
       <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 opacity-40" />
 
-      <Container className="grid min-h-[calc(100svh-4rem)] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:py-24">
+      <Container className="grid min-h-[calc(100svh-4rem)] items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16 lg:pb-20 lg:pt-28">
         <div className="max-w-3xl">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">
+          <p className="hero-copy-eyebrow font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">
             {t("eyebrow")}
           </p>
           <h1
             id="home-hero-title"
-            className="mt-5 max-w-4xl text-balance text-[clamp(2.5rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.065em]"
+            className="hero-copy-title mt-5 max-w-4xl text-balance text-[clamp(2.5rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.065em]"
           >
             {t("title")}
           </h1>
-          <p className="mt-6 max-w-2xl text-pretty text-base leading-7 text-fuentivo-secondary sm:text-lg sm:leading-8">
+          <p className="hero-copy-description mt-6 max-w-2xl text-pretty text-base leading-7 text-fuentivo-secondary sm:text-lg sm:leading-8">
             {t("description")}
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="hero-copy-actions mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg" className="h-12 px-5 text-base">
               <Link href={appRoutes.contact} prefetch={false}>
                 {t("primaryCta")}
@@ -66,7 +66,7 @@ export async function Hero({ locale }: HeroProps) {
 
         <div
           aria-hidden="true"
-          className="hero-system relative mx-auto hidden aspect-[4/3] w-full max-w-xl overflow-hidden rounded-card-large border border-primary/20 bg-surface/65 shadow-[0_32px_120px_-48px_rgba(0,184,106,0.6)] backdrop-blur-sm sm:block"
+          className="hero-system relative mx-auto hidden aspect-[4/3] w-full max-w-xl overflow-hidden rounded-card-large border border-primary/20 bg-surface/65 shadow-[0_32px_120px_-48px_rgba(0,184,106,0.6)] backdrop-blur-sm sm:block lg:-translate-y-12"
         >
           <div className="hero-grid absolute inset-0 opacity-60" />
           <div className="absolute inset-x-[14%] top-1/2 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />

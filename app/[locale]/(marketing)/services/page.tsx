@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { PageHero } from "@/components/sections/PageHero";
 import { ServiceCard } from "@/components/sections/ServiceCard";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { Container } from "@/components/ui/container";
@@ -86,35 +87,14 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
     <>
       <StructuredData data={structuredData} />
       <main id="main-content" className="flex-1" tabIndex={-1}>
-      <section
-        aria-labelledby="services-page-title"
-        className="relative isolate overflow-hidden border-b border-border"
-      >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_18%,rgba(0,184,106,0.16),transparent_30%)]"
-        />
-        <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 opacity-35" />
-        <Container className="py-20 sm:py-24 lg:py-32">
-          <div className="max-w-4xl">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">
-              {t("intro.eyebrow")}
-            </p>
-            <h1
-              id="services-page-title"
-              className="mt-5 text-balance text-[clamp(2.75rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.065em]"
-            >
-              {t("intro.title")}
-            </h1>
-            <p className="mt-7 max-w-2xl text-pretty text-base leading-7 text-fuentivo-secondary sm:text-lg sm:leading-8">
-              {t("intro.description")}
-            </p>
-            <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
-              {t("intro.pricing")}
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        headingId="services-page-title"
+        eyebrow={t("intro.eyebrow")}
+        title={t("intro.title")}
+        description={t("intro.description")}
+        supportingText={t("intro.pricing")}
+        variant="services"
+      />
 
       <Section aria-labelledby="service-lines-title" className="section-reveal">
         <Container>
@@ -139,7 +119,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                 title={t(`services.${key}.title`)}
                 className="motion-card-static sm:p-8 lg:p-10"
               >
-                <p className="mt-4 max-w-3xl text-base leading-7 text-fuentivo-secondary">
+                <p className="mt-4 max-w-3xl hyphens-auto text-base leading-7 text-fuentivo-secondary md:text-justify">
                   {t(`services.${key}.description`)}
                 </p>
 
@@ -174,7 +154,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                     </ul>
                   </div>
 
-                  <div className="rounded-card border border-primary/20 bg-primary/5 p-5">
+                  <div className="self-start rounded-card border border-primary/20 bg-primary/5 p-4">
                     <h4 className="font-mono text-xs font-medium uppercase tracking-[0.14em] text-primary">
                       {t("labels.result")}
                     </h4>
@@ -216,7 +196,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
               <h2 id="solution-definition-title" className="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
                 {t("definition.title")}
               </h2>
-              <p className="mt-5 max-w-xl leading-7 text-fuentivo-secondary">
+              <p className="mt-5 max-w-xl hyphens-auto leading-7 text-fuentivo-secondary md:text-justify">
                 {t("definition.description")}
               </p>
             </div>

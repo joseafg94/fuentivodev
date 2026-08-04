@@ -34,6 +34,9 @@ const nextConfig: NextConfig = {
   experimental: {
     globalNotFound: true,
   },
+  images: {
+    qualities: [75, 90],
+  },
   turbopack: {
     root: process.cwd(),
   },

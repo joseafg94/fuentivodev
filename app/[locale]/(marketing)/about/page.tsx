@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { ContactCTA } from "@/components/sections/ContactCTA";
+import { PageHero } from "@/components/sections/PageHero";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -62,45 +63,24 @@ export default async function AboutPage({ params }: AboutPageProps) {
     <>
       <StructuredData data={structuredData} />
       <main id="main-content" className="flex-1" tabIndex={-1}>
-        <section
-          aria-labelledby="about-page-title"
-          className="relative isolate overflow-hidden border-b border-border"
-        >
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_18%,rgba(0,184,106,0.16),transparent_30%)]"
-          />
-          <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 opacity-35" />
-          <Container className="py-20 sm:py-24 lg:py-32">
-            <div className="max-w-4xl">
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary sm:text-sm">
-                {t("intro.eyebrow")}
-              </p>
-              <h1
-                id="about-page-title"
-                className="mt-5 text-balance text-[clamp(2.75rem,7vw,5.75rem)] font-semibold leading-[0.98] tracking-[-0.065em]"
-              >
-                {t("intro.title")}
-              </h1>
-              <p className="mt-7 max-w-3xl text-pretty text-lg leading-8 text-fuentivo-secondary sm:text-xl sm:leading-9">
-                {t("intro.description")}
-              </p>
-            </div>
-          </Container>
-        </section>
+        <PageHero
+          headingId="about-page-title"
+          eyebrow={t("intro.eyebrow")}
+          title={t("intro.title")}
+          description={t("intro.description")}
+          variant="about"
+        />
 
         <Section aria-labelledby="about-identity-title" className="section-reveal">
           <Container>
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-              <div>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
-                  {t("identity.eyebrow")}
-                </p>
-                <h2 id="about-identity-title" className="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
-                  {t("identity.title")}
-                </h2>
-              </div>
-              <p className="max-w-3xl text-pretty text-lg leading-8 text-fuentivo-secondary">
+            <div className="grid gap-x-20 gap-y-4 lg:grid-cols-[0.72fr_1.28fr]">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary lg:col-start-1">
+                {t("identity.eyebrow")}
+              </p>
+              <h2 id="about-identity-title" className="text-3xl font-semibold tracking-[-0.045em] sm:text-5xl lg:col-start-1 lg:row-start-2">
+                {t("identity.title")}
+              </h2>
+              <p className="max-w-3xl hyphens-auto text-pretty text-lg leading-8 text-fuentivo-secondary md:text-justify lg:col-start-2 lg:row-start-2">
                 {t("identity.description")}
               </p>
             </div>
@@ -156,7 +136,7 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
             <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {principleKeys.map((key) => (
-                <li key={key} className="flex min-h-24 gap-3 rounded-card border border-border bg-card p-5">
+                <li key={key} className="motion-card flex min-h-24 gap-3 rounded-card border border-border bg-card p-5 transition-[border-color,transform,box-shadow] duration-200 ease-out motion-reduce:transition-none">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-primary/15 text-primary">
                     <Check aria-hidden="true" className="size-3.5" />
                   </span>
@@ -176,19 +156,19 @@ export default async function AboutPage({ params }: AboutPageProps) {
 
         <Section aria-labelledby="about-founder-title" className="section-reveal border-y border-border bg-surface/35">
           <Container>
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-              <div>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary">
-                  {t("founder.eyebrow")}
-                </p>
-                <h2 id="about-founder-title" className="mt-4 text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
+            <div className="grid gap-x-20 gap-y-4 lg:grid-cols-[0.72fr_1.28fr]">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.16em] text-primary lg:col-start-1">
+                {t("founder.eyebrow")}
+              </p>
+              <div className="lg:col-start-1 lg:row-start-2">
+                <h2 id="about-founder-title" className="text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">
                   José Fuentes
                 </h2>
                 <p className="mt-3 font-mono text-xs uppercase tracking-[0.12em] text-primary">
                   {t("founder.role")}
                 </p>
               </div>
-              <p className="max-w-3xl text-pretty text-lg leading-8 text-fuentivo-secondary">
+              <p className="max-w-3xl hyphens-auto text-pretty text-lg leading-8 text-fuentivo-secondary md:text-justify lg:col-start-2 lg:row-start-2">
                 {t("founder.description")}
               </p>
             </div>
