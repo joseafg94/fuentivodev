@@ -29,7 +29,9 @@ Cliente: <nombre o "proyecto interno">
 Industria: <industria>
 Año: <año>
 Estado: <published | in-progress | concept | archived>
+Tipo comercial: <client | internal-project | saas | concept | redesign | mvp>
 ¿Destacado?: <sí/no>
+Orden destacado: <número o "sin orden">
 URL publicada: <url o "no aplica">
 Problema: <descripción real>
 Solución: <descripción real>
@@ -48,7 +50,8 @@ preguntar antes de inventar contenido — nunca rellenar huecos con suposiciones
 1. Crear `content/projects/<slug>.ts` respetando la interfaz `Project` exactamente.
 2. Escribir **ambos idiomas** (`es` y `en`) para cada campo `LocalizedText` — ver
    `docs/INTERNATIONALIZATION.md §4` sobre calidad de traducción.
-3. Optimizar imágenes y ubicarlas en `public/projects/<slug>/` (ver
+3. Optimizar imágenes, registrar sus dimensiones y escribir `alt` en ES/EN antes de
+   ubicarlas en `public/projects/<slug>/` (ver
    `docs/PERFORMANCE_RULES.md §2`).
 4. Agregar el proyecto al registro central `content/projects/index.ts`.
 5. Completar `seo.es` y `seo.en` (título, descripción, imagen) — ver

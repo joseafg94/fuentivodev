@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { createRobots } from "@/app/robots";
 import sitemap from "@/app/sitemap";
-import { meniva } from "@/content/projects";
+import { alturaArquitectura, meniva, ordena, scope, splitly } from "@/content/projects";
 import type { Project } from "@/content/projects";
 import {
   appRoutes,
@@ -50,6 +50,25 @@ describe("localized SEO", () => {
     expect(metadata.openGraph).toMatchObject({ type: "article" });
   });
 
+  it.each([alturaArquitectura, scope, ordena, splitly])(
+    "creates localized project metadata for $slug",
+    (project) => {
+      const spanish = createProjectMetadata(project, "es");
+      const english = createProjectMetadata(project, "en");
+
+      expect(String(spanish.alternates?.canonical)).toMatch(
+        new RegExp(`/es/proyectos/${project.slug}$`),
+      );
+      expect(String(english.alternates?.canonical)).toMatch(
+        new RegExp(`/en/projects/${project.slug}$`),
+      );
+      expect(spanish.openGraph).toMatchObject({
+        title: project.seo.es.title,
+        images: [{ alt: project.coverImage.alt.es }],
+      });
+    },
+  );
+
   it("marks concept and archived project metadata as noindex", () => {
     for (const status of ["concept", "archived"] as const) {
       const project: Project = { ...meniva, status };
@@ -68,6 +87,10 @@ describe("localized SEO", () => {
     expect(urls.some((url) => url.endsWith("/en/privacy"))).toBe(true);
     expect(urls.some((url) => url.endsWith("/es/proyectos/meniva"))).toBe(true);
     expect(urls.some((url) => url.endsWith("/en/projects/meniva"))).toBe(true);
+    for (const slug of ["altura-arquitectura", "scope", "ordena", "splitly"]) {
+      expect(urls.some((url) => url.endsWith(`/es/proyectos/${slug}`))).toBe(true);
+      expect(urls.some((url) => url.endsWith(`/en/projects/${slug}`))).toBe(true);
+    }
     expect(urls.some((url) => url.includes("/api/"))).toBe(false);
   });
 

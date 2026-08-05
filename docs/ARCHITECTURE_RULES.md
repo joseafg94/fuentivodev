@@ -98,9 +98,26 @@ export type ProjectStatus =
   | "concept"
   | "archived";
 
+export type ProjectCommercialType =
+  | "client"
+  | "internal-project"
+  | "saas"
+  | "concept"
+  | "redesign"
+  | "mvp";
+
 export interface LocalizedText {
   es: string;
   en: string;
+}
+
+export interface ProjectImage {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+  aspectRatio: "4/3" | "16/9";
+  objectPosition?: string;
 }
 
 export interface Project {
@@ -109,22 +126,25 @@ export interface Project {
   shortDescription: LocalizedText;
   summary: LocalizedText;
   category: ProjectCategory;
+  commercialType: ProjectCommercialType;
+  commercialLabel: LocalizedText;
   status: ProjectStatus;
   year: number;
   featured: boolean;
+  featuredOrder?: number;
 
   client?: string;
   industry?: LocalizedText;
   location?: string;
 
-  coverImage: string;
-  thumbnailImage: string;
-  gallery?: string[];
+  coverImage: ProjectImage;
+  thumbnailImage: ProjectImage;
+  gallery?: ProjectImage[];
 
   liveUrl?: string;
   repositoryUrl?: string;
 
-  services: string[];
+  services: LocalizedText[];
   technologies: string[];
   tags: string[];
 

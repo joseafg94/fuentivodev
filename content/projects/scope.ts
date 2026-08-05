@@ -1,0 +1,100 @@
+import { defineProject } from "./schema";
+
+export const scope = defineProject({
+  slug: "scope",
+  title: { es: "Scope", en: "Scope" },
+  shortDescription: {
+    es: "Producto digital que convierte solicitudes ambiguas en una definición organizada del alcance antes de preparar una cotización.",
+    en: "Digital product that turns ambiguous requests into an organized project scope before a quotation is prepared.",
+  },
+  summary: {
+    es: "Scope organiza la información inicial de un proyecto mediante un flujo guiado que convierte requerimientos vagos en una ficha clara, priorizada y útil para evaluar complejidad, tiempo y presupuesto.",
+    en: "Scope organizes early project information through a guided flow that turns vague requirements into a clear, prioritized brief that supports complexity, timeline, and budget evaluation.",
+  },
+  category: "product",
+  commercialType: "concept",
+  commercialLabel: { es: "Producto conceptual", en: "Concept product" },
+  status: "published",
+  year: 2026,
+  featured: true,
+  featuredOrder: 2,
+  coverImage: {
+    src: "/projects/scope/cover.webp",
+    width: 1407,
+    height: 791,
+    aspectRatio: "16/9",
+    alt: {
+      es: "Vista amplia de Scope con el cuestionario guiado y el resumen dinámico del proyecto.",
+      en: "Wide Scope view featuring the guided questionnaire and dynamic project summary.",
+    },
+  },
+  thumbnailImage: {
+    src: "/projects/scope/thumbnail.webp",
+    width: 1407,
+    height: 1055,
+    aspectRatio: "4/3",
+    alt: {
+      es: "Interfaz de Scope mostrando la definición guiada y el resumen del alcance de un proyecto.",
+      en: "Scope interface showing guided project definition and a real-time scope summary.",
+    },
+  },
+  liveUrl: "https://scopebyfuentivo.vercel.app/",
+  services: [
+    { es: "Diseño de producto digital", en: "Digital product design" },
+    { es: "Desarrollo de aplicación web", en: "Web application development" },
+    { es: "Diseño de lógica de estimación", en: "Estimation logic design" },
+  ],
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Motion",
+    "Lucide React",
+    "localStorage",
+    "Web Share API",
+    "Clipboard API",
+    "Vercel",
+  ],
+  tags: ["Scoping", "Estimation", "Product", "Bilingual"],
+  challenge: {
+    es: "Freelancers y pequeños estudios reciben solicitudes incompletas o vagas que dificultan estimar funcionalidades, complejidad, tiempo, presupuesto y prioridades.",
+    en: "Freelancers and small studios receive incomplete or vague requests that make it difficult to estimate features, complexity, timelines, budgets, and priorities.",
+  },
+  objective: {
+    es: "Reducir la ambigüedad inicial de los proyectos y transformar una conversación desordenada en una ficha útil para evaluar y cotizar.",
+    en: "Reduce early project ambiguity and transform an unstructured conversation into a useful brief for evaluation and pricing.",
+  },
+  solution: {
+    es: "Un flujo guiado que divide la definición del proyecto en preguntas breves, selección de funcionalidades y prioridades, mientras construye en tiempo real un resumen del alcance.",
+    en: "A guided flow that breaks project definition into short questions, feature selection, and priorities while building a real-time project scope summary.",
+  },
+  features: [
+    { es: "Landing de presentación y onboarding corto.", en: "Product landing page and short onboarding." },
+    { es: "Creación de proyectos y selector de tipo de servicio.", en: "Project creation and service-type selection." },
+    { es: "Preguntas progresivas con lógica condicional.", en: "Progressive questions with conditional logic." },
+    { es: "Checklist de funcionalidades.", en: "Feature checklist." },
+    { es: "Prioridades esenciales, importantes y opcionales.", en: "Essential, important, and optional priorities." },
+    { es: "Indicador de progreso y resumen dinámico en tiempo real.", en: "Progress indicator and real-time dynamic summary." },
+    { es: "Niveles orientativos de claridad y complejidad.", en: "Guidance on scope clarity and complexity." },
+    { es: "Estimaciones orientativas de tiempo y presupuesto.", en: "High-level timeline and budget guidance." },
+    { es: "Insights automáticos y proyectos recientes.", en: "Automatic insights and recent projects." },
+    { es: "Guardado local.", en: "Local saving." },
+    { es: "Copiar, imprimir y exportar el resumen mediante impresión.", en: "Copy, print, and export the summary through the print view." },
+    { es: "Compartir por WhatsApp.", en: "WhatsApp sharing." },
+    { es: "Español e inglés, responsive y accesible.", en: "Spanish and English, responsive, and accessible." },
+  ],
+  seo: {
+    es: {
+      title: "Scope — Definición guiada de alcance para proyectos digitales",
+      description: "Producto conceptual que organiza requerimientos, funcionalidades y prioridades para convertir solicitudes vagas en un alcance útil antes de cotizar.",
+      image: "/projects/scope/cover.webp",
+    },
+    en: {
+      title: "Scope — Guided Scope Definition for Digital Projects",
+      description: "Concept product that organizes requirements, features, and priorities into a practical project scope before a quotation is prepared.",
+      image: "/projects/scope/cover.webp",
+    },
+  },
+});

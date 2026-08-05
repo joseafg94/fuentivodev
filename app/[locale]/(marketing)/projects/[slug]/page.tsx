@@ -57,22 +57,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const projectsUrl = absoluteUrl(getLocalizedPath(locale, appRoutes.projects));
   const homeUrl = absoluteUrl(getLocalizedPath(locale, appRoutes.home));
   const imageUrl = new URL(
-    project.seo[locale].image ?? project.coverImage,
+    project.seo[locale].image ?? project.coverImage.src,
     siteConfig.url,
   ).toString();
-  const creativeWork = project.category === "product"
+  const isSoftwareApplication = ["product", "system", "application"].includes(project.category);
+  const creativeWork = isSoftwareApplication
     ? {
         "@type": "SoftwareApplication",
         name: project.title[locale],
         description: project.summary[locale],
-        applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         url: projectUrl,
         image: imageUrl,
         author: { "@type": "Organization", name: siteConfig.name, url: homeUrl },
       }
     : {
-        "@type": "CreativeWork",
+        "@type": "WebSite",
         name: project.title[locale],
         description: project.summary[locale],
         url: projectUrl,
@@ -107,6 +107,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           overview: t("sections.overview"),
           year: t("metadata.year"),
           category: t("metadata.category"),
+          commercialType: t("metadata.commercialType"),
           status: t("metadata.status"),
           industry: t("metadata.industry"),
           challenge: t("sections.challenge"),
@@ -114,14 +115,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           solution: t("sections.solution"),
           process: t("sections.process"),
           features: t("sections.features"),
+          services: t("sections.services"),
           uxDecisions: t("sections.uxDecisions"),
           gallery: t("sections.gallery"),
-          galleryAlt: t("galleryAlt"),
           results: t("sections.results"),
           testimonial: t("sections.testimonial"),
           technologies: t("sections.technologies"),
           links: t("sections.links"),
-          liveProject: t("links.live"),
+          liveProject: t(project.category === "web" ? "links.website" : "links.demo"),
           repository: t("links.repository"),
           related: t("sections.related"),
           categoryLabel: t(`category.${project.category}`),

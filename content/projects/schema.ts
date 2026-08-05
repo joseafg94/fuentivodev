@@ -16,6 +16,15 @@ export const PROJECT_STATUSES = [
   "archived",
 ] as const;
 
+export const PROJECT_COMMERCIAL_TYPES = [
+  "client",
+  "internal-project",
+  "saas",
+  "concept",
+  "redesign",
+  "mvp",
+] as const;
+
 const requiredText = z.string().trim().min(1);
 const imagePath = requiredText.startsWith("/");
 
@@ -34,6 +43,17 @@ const seoEntrySchema = z
   })
   .strict();
 
+export const projectImageSchema = z
+  .object({
+    src: imagePath,
+    width: z.number().int().positive(),
+    height: z.number().int().positive(),
+    alt: localizedTextSchema,
+    aspectRatio: z.enum(["4/3", "16/9"]),
+    objectPosition: requiredText.optional(),
+  })
+  .strict();
+
 const testimonialSchema = z
   .object({
     quote: localizedTextSchema,
@@ -49,18 +69,21 @@ export const projectSchema = z
     shortDescription: localizedTextSchema,
     summary: localizedTextSchema,
     category: z.enum(PROJECT_CATEGORIES),
+    commercialType: z.enum(PROJECT_COMMERCIAL_TYPES),
+    commercialLabel: localizedTextSchema,
     status: z.enum(PROJECT_STATUSES),
     year: z.number().int().min(2000).max(2100),
     featured: z.boolean(),
+    featuredOrder: z.number().int().positive().optional(),
     client: requiredText.optional(),
     industry: localizedTextSchema.optional(),
     location: requiredText.optional(),
-    coverImage: imagePath,
-    thumbnailImage: imagePath,
-    gallery: z.array(imagePath).min(1).optional(),
+    coverImage: projectImageSchema,
+    thumbnailImage: projectImageSchema,
+    gallery: z.array(projectImageSchema).min(1).optional(),
     liveUrl: z.url().optional(),
     repositoryUrl: z.url().optional(),
-    services: z.array(requiredText).min(1),
+    services: z.array(localizedTextSchema).min(1),
     technologies: z.array(requiredText).min(1),
     tags: z.array(requiredText).min(1),
     challenge: localizedTextSchema,
@@ -78,10 +101,21 @@ export const projectSchema = z
       })
       .strict(),
   })
-  .strict();
+  .strict()
+  .superRefine((project, context) => {
+    if (!project.featured && project.featuredOrder !== undefined) {
+      context.addIssue({
+        code: "custom",
+        path: ["featuredOrder"],
+        message: "featuredOrder requires featured to be true",
+      });
+    }
+  });
 
 export type LocalizedText = z.infer<typeof localizedTextSchema>;
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[number];
+export type ProjectCommercialType = (typeof PROJECT_COMMERCIAL_TYPES)[number];
+export type ProjectImage = z.infer<typeof projectImageSchema>;
 export type ProjectStatus = (typeof PROJECT_STATUSES)[number];
 export type ProjectSeo = z.infer<typeof seoEntrySchema>;
 export type ProjectTestimonial = z.infer<typeof testimonialSchema>;

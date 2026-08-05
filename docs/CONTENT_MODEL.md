@@ -24,9 +24,26 @@ export type ProjectStatus =
   | "concept"
   | "archived";
 
+export type ProjectCommercialType =
+  | "client"
+  | "internal-project"
+  | "saas"
+  | "concept"
+  | "redesign"
+  | "mvp";
+
 export interface LocalizedText {
   es: string;
   en: string;
+}
+
+export interface ProjectImage {
+  src: string;
+  width: number;
+  height: number;
+  alt: LocalizedText;
+  aspectRatio: "4/3" | "16/9";
+  objectPosition?: string;
 }
 ```
 
@@ -45,22 +62,25 @@ export interface Project {
   shortDescription: LocalizedText;
   summary: LocalizedText;
   category: ProjectCategory;
+  commercialType: ProjectCommercialType;
+  commercialLabel: LocalizedText;
   status: ProjectStatus;
   year: number;
   featured: boolean;
+  featuredOrder?: number;
 
   client?: string;
   industry?: LocalizedText;
   location?: string;
 
-  coverImage: string;
-  thumbnailImage: string;
-  gallery?: string[];
+  coverImage: ProjectImage;
+  thumbnailImage: ProjectImage;
+  gallery?: ProjectImage[];
 
   liveUrl?: string;
   repositoryUrl?: string;
 
-  services: string[];
+  services: LocalizedText[];
   technologies: string[];
   tags: string[];
 
@@ -90,11 +110,20 @@ export interface Project {
 ## 3. Campos obligatorios vs. opcionales
 
 **Siempre obligatorios:** `slug`, `title`, `shortDescription`, `summary`, `category`,
-`status`, `year`, `featured`, `coverImage`, `thumbnailImage`, `services`, `technologies`,
+`commercialType`, `commercialLabel`, `status`, `year`, `featured`, `coverImage`,
+`thumbnailImage`, `services`, `technologies`,
 `tags`, `challenge`, `objective`, `solution`, `seo`.
 
 **Opcionales, según el tipo de trabajo:** `client`, `industry`, `location`, `gallery`,
-`liveUrl`, `repositoryUrl`, `process`, `features`, `uxDecisions`, `results`, `testimonial`.
+`liveUrl`, `repositoryUrl`, `featuredOrder`, `process`, `features`, `uxDecisions`, `results`,
+`testimonial`.
+
+`featuredOrder` solo afecta proyectos con `featured: true`: los valores menores aparecen
+primero y los destacados sin orden explícito aparecen después. El orden se resuelve en el
+helper central, nunca por la posición física del registro.
+
+Las imágenes incluyen dimensiones, proporción estable y `alt` localizado. `objectPosition`
+solo se agrega cuando el encuadre aprobado necesita un ajuste explícito.
 
 Regla: **un campo opcional vacío se omite, nunca se rellena con "N/A", guiones o texto
 genérico.** La plantilla de la ruta dinámica debe ocultar la sección completa si el campo
@@ -131,9 +160,8 @@ completo, no una checklist rígida.
   cliente para citarlo, se omiten por completo.
 - `client` solo se llena si el trabajo fue realmente para ese cliente. Un concepto o
   prototipo interno no puede tener `client` asignado.
-- `technologies` y `services` deben usar los mismos nombres/strings ya usados en otros
-  proyectos (revisar el registro antes de escribir uno nuevo con nombre distinto para lo
-  mismo, ej. no mezclar "Next.js" y "NextJS").
+- `technologies` debe conservar nombres consistentes y `services` debe reutilizar la misma
+  terminología localizada entre proyectos (ej. no mezclar "Next.js" y "NextJS").
 - `seo.es` y `seo.en` son independientes: no son traducciones automáticas, son metadata
   pensada para cada idioma/mercado.
 

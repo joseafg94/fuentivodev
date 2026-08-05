@@ -57,7 +57,7 @@ export async function FeaturedProjects({ locale }: FeaturedProjectsProps) {
               categoryLabel={projectT(`category.${project.category}`)}
               statusLabel={projectT(`status.${project.status}`)}
               viewProjectLabel={projectT("viewProject")}
-              liveProjectLabel={projectT("liveProject")}
+              liveProjectLabel={projectT(project.category === "web" ? "visitWebsite" : "openDemo")}
               imageSizes="(min-width: 1280px) 1024px, (min-width: 768px) calc(100vw - 3rem), calc(100vw - 2rem)"
             />
           ))}

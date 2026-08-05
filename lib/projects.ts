@@ -3,10 +3,12 @@ import type { Project, ProjectCategory } from "@/content/projects";
 
 const publicInProgressSlugs = new Set<string>();
 
+function compareProjects(a: Project, b: Project): number {
+  return b.year - a.year || a.title.es.localeCompare(b.title.es, "es");
+}
+
 export function sortProjects(projectList: readonly Project[]): Project[] {
-  return [...projectList].sort(
-    (a, b) => b.year - a.year || a.title.es.localeCompare(b.title.es, "es"),
-  );
+  return [...projectList].sort(compareProjects);
 }
 
 export function isProjectPublic(project: Project): boolean {
@@ -26,8 +28,17 @@ export function getPublicProjects(): Project[] {
   return getAllProjects().filter(isProjectPublic);
 }
 
-export function getFeaturedProjects(): Project[] {
-  return getPublicProjects().filter((project) => project.featured);
+export function getFeaturedProjects(limit?: number): Project[] {
+  const featuredProjects = getPublicProjects()
+    .filter((project) => project.featured)
+    .sort((a, b) => {
+      const aOrder = a.featuredOrder ?? Number.POSITIVE_INFINITY;
+      const bOrder = b.featuredOrder ?? Number.POSITIVE_INFINITY;
+
+      return aOrder - bOrder || compareProjects(a, b);
+    });
+
+  return limit === undefined ? featuredProjects : featuredProjects.slice(0, Math.max(0, limit));
 }
 
 export function getProjectsByCategory(category: ProjectCategory): Project[] {

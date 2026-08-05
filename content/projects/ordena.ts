@@ -1,0 +1,100 @@
+import { defineProject } from "./schema";
+
+export const ordena = defineProject({
+  slug: "ordena",
+  title: { es: "Ordena", en: "Ordena" },
+  shortDescription: {
+    es: "Sistema interno para registrar, asignar, programar y dar seguimiento a solicitudes de mantenimiento de oficinas.",
+    en: "Internal system for registering, assigning, scheduling, and tracking office maintenance requests.",
+  },
+  summary: {
+    es: "Ordena centraliza solicitudes de mantenimiento que normalmente llegan por múltiples canales y las convierte en una operación estructurada con responsables, prioridades, fechas, estados e historial.",
+    en: "Ordena centralizes maintenance requests that normally arrive through multiple channels and turns them into a structured operation with owners, priorities, dates, statuses, and history.",
+  },
+  category: "system",
+  commercialType: "internal-project",
+  commercialLabel: { es: "Sistema interno conceptual", en: "Internal system concept" },
+  status: "published",
+  year: 2026,
+  featured: true,
+  featuredOrder: 3,
+  coverImage: {
+    src: "/projects/ordena/cover.webp",
+    width: 1672,
+    height: 941,
+    aspectRatio: "16/9",
+    alt: {
+      es: "Vista amplia del sistema Ordena con solicitudes, tabla operativa y tablero Kanban.",
+      en: "Wide Ordena system view featuring requests, an operations table, and a Kanban board.",
+    },
+  },
+  thumbnailImage: {
+    src: "/projects/ordena/thumbnail.webp",
+    width: 1407,
+    height: 1055,
+    aspectRatio: "4/3",
+    alt: {
+      es: "Dashboard de Ordena con solicitudes de mantenimiento, prioridades y estados operativos.",
+      en: "Ordena dashboard showing maintenance requests, priorities, and operational statuses.",
+    },
+  },
+  liveUrl: "https://ordenabyfuentivo.vercel.app/",
+  services: [
+    { es: "Diseño de sistema interno", en: "Internal system design" },
+    { es: "Desarrollo de aplicación web", en: "Web application development" },
+    { es: "Diseño de flujos operativos", en: "Operational workflow design" },
+  ],
+  technologies: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "Motion",
+    "Lucide React",
+    "localStorage",
+    "Vercel",
+  ],
+  tags: ["Operations", "Maintenance", "Internal system", "Bilingual"],
+  challenge: {
+    es: "Las solicitudes llegan por WhatsApp, llamadas, correos y mensajes informales, lo que provoca pérdida de detalles, trabajos olvidados y poca claridad sobre responsables, prioridades, fechas y estados.",
+    en: "Requests arrive through WhatsApp, calls, emails, and informal messages, causing missing details, forgotten work, and limited visibility into owners, priorities, dates, and status.",
+  },
+  objective: {
+    es: "Centralizar la operación diaria y permitir que el equipo conozca qué trabajos existen, cuáles son urgentes, quién está asignado y qué solicitudes necesitan atención.",
+    en: "Centralize daily operations so the team can see existing work, urgent requests, assigned owners, and items requiring attention.",
+  },
+  solution: {
+    es: "Un panel operativo que transforma cada solicitud en un flujo estructurado con cliente, sucursal, responsable, prioridad, programación, estado e historial.",
+    en: "An operational dashboard that turns every request into a structured workflow with client, location, owner, priority, scheduling, status, and history.",
+  },
+  features: [
+    { es: "Acceso visual con cuenta demo.", en: "Visual sign-in with a demo account." },
+    { es: "Dashboard operativo con estadísticas derivadas.", en: "Operations dashboard with derived statistics." },
+    { es: "Solicitudes por estado, actividad reciente y carga por responsable.", en: "Requests by status, recent activity, and workload by owner." },
+    { es: "Seguimiento de trabajos urgentes.", en: "Urgent work tracking." },
+    { es: "Tabla de solicitudes con búsqueda, filtros y ordenamiento.", en: "Request table with search, filters, and sorting." },
+    { es: "Vista Kanban.", en: "Kanban view." },
+    { es: "Creación rápida y formulario completo.", en: "Quick creation and a complete request form." },
+    { es: "Edición, asignación, prioridades y programación.", en: "Editing, assignment, priorities, and scheduling." },
+    { es: "Cambios de estado, bloqueos con motivo y cierre de solicitudes.", en: "Status changes, documented blockers, and request closure." },
+    { es: "Vista de detalle con notas, historial y línea de tiempo.", en: "Detail view with notes, history, and timeline." },
+    { es: "Adjuntos y configuración simulados.", en: "Simulated attachments and settings." },
+    { es: "Calendario semanal.", en: "Weekly calendar." },
+    { es: "Contacto contextual por WhatsApp.", en: "Contextual WhatsApp contact." },
+    { es: "Persistencia local y reinicio de datos demo.", en: "Local persistence and demo-data reset." },
+    { es: "Español e inglés, responsive y accesible.", en: "Spanish and English, responsive, and accessible." },
+  ],
+  seo: {
+    es: {
+      title: "Ordena — Sistema de gestión de solicitudes de mantenimiento",
+      description: "Sistema interno conceptual que centraliza solicitudes de mantenimiento con responsables, prioridades, programación, estados e historial operativo.",
+      image: "/projects/ordena/cover.webp",
+    },
+    en: {
+      title: "Ordena — Maintenance Request Management System",
+      description: "Internal system concept that centralizes maintenance requests through owners, priorities, scheduling, statuses, and operational history.",
+      image: "/projects/ordena/cover.webp",
+    },
+  },
+});

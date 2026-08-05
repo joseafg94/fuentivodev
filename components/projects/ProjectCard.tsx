@@ -1,10 +1,11 @@
 import { ArrowUpRight, ExternalLink } from "lucide-react";
-import Image from "next/image";
 
 import type { Project } from "@/content/projects";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { getProjectRoute } from "@/lib/routes";
+
+import { ProjectImage } from "./ProjectImage";
 
 type ProjectCardProps = {
   project: Project;
@@ -29,14 +30,18 @@ export function ProjectCard({
 
   return (
     <article className="motion-card group flex h-full flex-col overflow-hidden rounded-card-large border border-border bg-card transition-[border-color,transform,box-shadow] duration-200 ease-out motion-reduce:transition-none">
-      <Link href={projectHref} className="relative block aspect-[4/3] overflow-hidden border-b border-border bg-background">
-        <Image
-          src={project.thumbnailImage}
-          alt={`${project.title[locale]} — ${project.shortDescription[locale]}`}
-          fill
+      <Link href={projectHref} className="relative block border-b border-border">
+        <ProjectImage
+          src={project.thumbnailImage.src}
+          width={project.thumbnailImage.width}
+          height={project.thumbnailImage.height}
+          alt={project.thumbnailImage.alt[locale]}
+          aspectRatio={project.thumbnailImage.aspectRatio}
+          objectPosition={project.thumbnailImage.objectPosition}
           sizes={imageSizes}
           quality={90}
-          className="motion-card-image object-cover transition-transform duration-300 ease-out motion-reduce:transition-none"
+          className="border-0"
+          imageClassName="motion-card-image transition-transform duration-300 ease-out motion-reduce:transition-none"
         />
         <span className="absolute left-4 top-4 rounded-full border border-primary/30 bg-background/85 px-3 py-1 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-primary backdrop-blur-md">
           {statusLabel}
@@ -48,12 +53,8 @@ export function ProjectCard({
           <span>{categoryLabel}</span>
           <span aria-hidden="true">·</span>
           <span>{project.year}</span>
-          {project.industry ? (
-            <>
-              <span aria-hidden="true">·</span>
-              <span>{project.industry[locale]}</span>
-            </>
-          ) : null}
+          <span aria-hidden="true">·</span>
+          <span>{project.commercialLabel[locale]}</span>
         </div>
 
         <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">
@@ -88,7 +89,7 @@ export function ProjectCard({
             <a
               href={project.liveUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center gap-2 font-medium text-fuentivo-secondary transition-colors hover:text-foreground"
             >
               {liveProjectLabel}

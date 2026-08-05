@@ -319,6 +319,8 @@
   "Projects": {
     "viewProject": "Ver caso de estudio",
     "liveProject": "Ver sitio",
+    "visitWebsite": "Visitar sitio",
+    "openDemo": "Abrir demo",
     "category": {
       "web": "Web",
       "system": "Sistema",
@@ -393,6 +395,7 @@
     "metadata": {
       "year": "Año",
       "category": "Categoría",
+      "commercialType": "Tipo comercial",
       "status": "Estado",
       "industry": "Industria"
     },
@@ -403,6 +406,7 @@
       "solution": "La solución",
       "process": "Proceso",
       "features": "Funciones principales",
+      "services": "Servicios",
       "uxDecisions": "Decisiones de experiencia",
       "gallery": "Galería",
       "results": "Resultados",
@@ -414,6 +418,8 @@
     "galleryAlt": "vista del proyecto",
     "links": {
       "live": "Ver proyecto",
+      "website": "Visitar sitio",
+      "demo": "Abrir demo",
       "repository": "Ver repositorio"
     },
     "category": {

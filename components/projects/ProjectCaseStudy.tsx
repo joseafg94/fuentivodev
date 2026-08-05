@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-import Image from "next/image";
 
 import { ContactCTA } from "@/components/sections/ContactCTA";
 import { Container } from "@/components/ui/container";
@@ -10,6 +9,7 @@ import type { Locale } from "@/i18n/routing";
 import { appRoutes } from "@/lib/routes";
 
 import { ProjectGrid } from "./ProjectGrid";
+import { ProjectImage } from "./ProjectImage";
 
 type ProjectCaseStudyLabels = {
   breadcrumbHome: string;
@@ -17,6 +17,7 @@ type ProjectCaseStudyLabels = {
   overview: string;
   year: string;
   category: string;
+  commercialType: string;
   status: string;
   industry: string;
   challenge: string;
@@ -26,7 +27,7 @@ type ProjectCaseStudyLabels = {
   features: string;
   uxDecisions: string;
   gallery: string;
-  galleryAlt: string;
+  services: string;
   results: string;
   testimonial: string;
   technologies: string;
@@ -104,17 +105,17 @@ export function ProjectCaseStudy({
               </p>
             </div>
 
-            <div className="relative aspect-[4/3] overflow-hidden rounded-card-large border border-border bg-card">
-              <Image
-                src={project.coverImage}
-                alt={`${localized(project.title)} — ${localized(project.shortDescription)}`}
-                fill
+            <ProjectImage
+                src={project.coverImage.src}
+                width={project.coverImage.width}
+                height={project.coverImage.height}
+                alt={project.coverImage.alt[locale]}
+                aspectRatio={project.coverImage.aspectRatio}
+                objectPosition={project.coverImage.objectPosition}
                 priority
-                fetchPriority="high"
                 sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-cover"
+                className="rounded-card-large border border-border bg-card"
               />
-            </div>
           </div>
         </Container>
       </section>
@@ -129,6 +130,7 @@ export function ProjectCaseStudy({
             {[
               [labels.year, String(project.year)],
               [labels.category, labels.categoryLabel],
+              [labels.commercialType, localized(project.commercialLabel)],
               [labels.status, labels.statusLabel],
               ...(project.industry ? [[labels.industry, localized(project.industry)]] : []),
             ].map(([term, value]) => (
@@ -174,6 +176,13 @@ export function ProjectCaseStudy({
         </Section>
       ) : null}
 
+      <Section aria-labelledby="project-services-title" className="section-reveal border-y border-border bg-card/35">
+        <Container>
+          <h2 id="project-services-title" className="text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">{labels.services}</h2>
+          <div className="mt-8"><TextList items={project.services} locale={locale} /></div>
+        </Container>
+      </Section>
+
       {project.uxDecisions ? (
         <Section aria-labelledby="project-ux-title" className="section-reveal border-y border-border bg-card/35">
           <Container>
@@ -188,14 +197,17 @@ export function ProjectCaseStudy({
           <Container>
             <h2 id="project-gallery-title" className="text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">{labels.gallery}</h2>
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
-              {project.gallery.map((image, index) => (
-                <figure key={image} className="relative aspect-video overflow-hidden rounded-card-large border border-border bg-card">
-                  <Image
-                    src={image}
-                    alt={`${localized(project.title)} — ${labels.galleryAlt} ${index + 1}`}
-                    fill
+              {project.gallery.map((image) => (
+                <figure key={image.src}>
+                  <ProjectImage
+                    src={image.src}
+                    width={image.width}
+                    height={image.height}
+                    alt={image.alt[locale]}
+                    aspectRatio={image.aspectRatio}
+                    objectPosition={image.objectPosition}
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="rounded-card-large border border-border bg-card"
                   />
                 </figure>
               ))}
@@ -244,8 +256,8 @@ export function ProjectCaseStudy({
           <Container>
             <h2 id="project-links-title" className="text-3xl font-semibold tracking-[-0.045em] sm:text-5xl">{labels.links}</h2>
             <div className="mt-7 flex flex-wrap gap-5">
-              {project.liveUrl ? <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 font-medium text-primary">{labels.liveProject}<ExternalLink aria-hidden="true" className="size-4" /></a> : null}
-              {project.repositoryUrl ? <a href={project.repositoryUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 font-medium text-primary">{labels.repository}<ExternalLink aria-hidden="true" className="size-4" /></a> : null}
+              {project.liveUrl ? <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-medium text-primary">{labels.liveProject}<ExternalLink aria-hidden="true" className="size-4" /></a> : null}
+              {project.repositoryUrl ? <a href={project.repositoryUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 font-medium text-primary">{labels.repository}<ExternalLink aria-hidden="true" className="size-4" /></a> : null}
             </div>
           </Container>
         </Section>

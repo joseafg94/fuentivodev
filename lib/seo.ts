@@ -69,7 +69,7 @@ export function createProjectMetadata(
   const canonical = absoluteUrl(getLocalizedProjectPath(locale, project.slug));
   const spanishUrl = absoluteUrl(getLocalizedProjectPath("es", project.slug));
   const englishUrl = absoluteUrl(getLocalizedProjectPath("en", project.slug));
-  const image = absoluteUrl(seo.image ?? project.coverImage);
+  const image = absoluteUrl(seo.image ?? project.coverImage.src);
   const shouldIndex = shouldIndexProject(project);
 
   return {
@@ -92,7 +92,7 @@ export function createProjectMetadata(
       title: seo.title,
       description: seo.description,
       url: canonical,
-      images: [{ url: image, alt: project.title[locale] }],
+      images: [{ url: image, alt: project.coverImage.alt[locale] }],
       locale: locale === "es" ? "es_PA" : "en_US",
       alternateLocale: locale === "es" ? ["en_US"] : ["es_PA"],
     },

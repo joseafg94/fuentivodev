@@ -23,7 +23,7 @@ export async function ProjectGrid({ projects, locale }: ProjectGridProps) {
             categoryLabel={t(`category.${project.category}`)}
             statusLabel={t(`status.${project.status}`)}
             viewProjectLabel={t("viewProject")}
-            liveProjectLabel={t("liveProject")}
+            liveProjectLabel={t(project.category === "web" ? "visitWebsite" : "openDemo")}
           />
         </div>
       ))}
