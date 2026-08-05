@@ -51,6 +51,8 @@ export const projectImageSchema = z
     alt: localizedTextSchema,
     aspectRatio: z.enum(["4/3", "16/9"]),
     objectPosition: requiredText.optional(),
+    objectFit: z.enum(["cover", "contain", "fill", "none", "scale-down"]).optional(),
+    backgroundColor: requiredText.optional(),
   })
   .strict();
 

@@ -57,6 +57,15 @@ export async function generateMetadata({
   return {
     metadataBase: siteConfig.url,
     manifest: "/manifest.webmanifest",
+    icons: {
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/icons/pwa-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      apple: [
+        { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      ],
+    },
     ...createLocalizedMetadata({
       locale,
       href: appRoutes.home,

@@ -2,7 +2,7 @@ import { defineProject } from "./schema";
 
 export const alturaArquitectura = defineProject({
   slug: "altura-arquitectura",
-  title: { es: "Altura Arquitectura", en: "Altura Arquitectura" },
+  title: { es: "Altura ", en: "Altura " },
   shortDescription: {
     es: "Sitio web premium y editorial para un estudio ficticio de arquitectura y diseño de interiores en Panamá.",
     en: "Premium editorial website for a fictional architecture and interior design studio in Panama.",

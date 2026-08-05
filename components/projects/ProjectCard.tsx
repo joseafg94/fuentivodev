@@ -38,6 +38,8 @@ export function ProjectCard({
           alt={project.thumbnailImage.alt[locale]}
           aspectRatio={project.thumbnailImage.aspectRatio}
           objectPosition={project.thumbnailImage.objectPosition}
+          objectFit={project.thumbnailImage.objectFit}
+          backgroundColor={project.thumbnailImage.backgroundColor}
           sizes={imageSizes}
           quality={90}
           className="border-0"

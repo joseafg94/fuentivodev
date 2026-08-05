@@ -20,9 +20,11 @@ export const scope = defineProject({
   featuredOrder: 2,
   coverImage: {
     src: "/projects/scope/cover.webp",
-    width: 1407,
-    height: 791,
+    width: 1672,
+    height: 941,
     aspectRatio: "16/9",
+    objectFit: "contain",
+    backgroundColor: "#0b0d0e",
     alt: {
       es: "Vista amplia de Scope con el cuestionario guiado y el resumen dinámico del proyecto.",
       en: "Wide Scope view featuring the guided questionnaire and dynamic project summary.",
@@ -33,6 +35,8 @@ export const scope = defineProject({
     width: 1407,
     height: 1055,
     aspectRatio: "4/3",
+    objectFit: "contain",
+    backgroundColor: "#0b0d0e",
     alt: {
       es: "Interfaz de Scope mostrando la definición guiada y el resumen del alcance de un proyecto.",
       en: "Scope interface showing guided project definition and a real-time scope summary.",

@@ -112,6 +112,8 @@ export function ProjectCaseStudy({
                 alt={project.coverImage.alt[locale]}
                 aspectRatio={project.coverImage.aspectRatio}
                 objectPosition={project.coverImage.objectPosition}
+                objectFit={project.coverImage.objectFit}
+                backgroundColor={project.coverImage.backgroundColor}
                 priority
                 sizes="(min-width: 1024px) 58vw, 100vw"
                 className="rounded-card-large border border-border bg-card"
@@ -206,6 +208,8 @@ export function ProjectCaseStudy({
                     alt={image.alt[locale]}
                     aspectRatio={image.aspectRatio}
                     objectPosition={image.objectPosition}
+                    objectFit={image.objectFit}
+                    backgroundColor={image.backgroundColor}
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="rounded-card-large border border-border bg-card"
                   />
