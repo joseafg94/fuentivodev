@@ -14,19 +14,19 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "es",
     icons: [
       {
-        src: "/icons/pwa-192.png",
+        src: "/icons/appico.png",
         sizes: "192x192",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icons/pwa-512.png",
+        src: "/icons/appico.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },
       {
-        src: "/icons/pwa-maskable-512.png",
+        src: "/icons/appico.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",
