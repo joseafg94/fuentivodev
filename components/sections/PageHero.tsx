@@ -8,8 +8,7 @@ import {
   Send,
   Workflow,
 } from "lucide-react";
-import Image from "next/image";
-
+import { FuentivoLogo } from "@/components/branding/FuentivoLogo";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
@@ -31,13 +30,14 @@ function PageHeroVisual({ variant }: { variant: PageHeroVariant }) {
         <span className="brand-mark-orbit" />
         <span className="brand-mark-axis brand-mark-axis-horizontal" />
         <span className="brand-mark-axis brand-mark-axis-vertical" />
-        <span className="brand-mark-frame">
-          <Image
-            src="/icon.svg"
-            alt=""
-            width={512}
-            height={512}
-            className="brand-mark-image size-full"
+        <span className="brand-mark-frame flex items-center justify-center p-6 sm:p-8">
+          <FuentivoLogo
+            variant="icon"
+            format="svg"
+            size={320}
+            asLink={false}
+            priority
+            iconClassName="brand-mark-image size-full object-contain drop-shadow-[0_0_24px_rgba(0,184,106,0.3)]"
           />
         </span>
       </div>
